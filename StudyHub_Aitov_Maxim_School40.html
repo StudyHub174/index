@@ -1,0 +1,3384 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#4f46e5">
+<title>Ученик 40 школы города Магнитогорска 10А класса Аитов Максим — StudyHub Ultimate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Цветовые темы */
+  --p: #4f46e5;
+  --p-hover: #4338ca;
+  --p-light: #eef2ff;
+  --p-glow: rgba(79, 70, 229, 0.25);
+  --p-grad: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  
+  --bg: #f8fafc;
+  --bg-sidebar: #0f172a;
+  --bg-sidebar-card: #1e293b;
+  --card: #ffffff;
+  --card-subtle: #f1f5f9;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --border-subtle: #f8fafc;
+  
+  --success: #10b981;
+  --success-bg: #ecfdf5;
+  --danger: #ef4444;
+  --danger-bg: #fef2f2;
+  --warning: #f59e0b;
+  --warning-bg: #fffbeb;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 35px -8px rgba(15, 23, 42, 0.12);
+}
+
+body[data-accent="emerald"] {
+  --p: #059669; --p-hover: #047857; --p-light: #ecfdf5; --p-glow: rgba(5, 150, 105, 0.25);
+  --p-grad: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+}
+body[data-accent="crimson"] {
+  --p: #e11d48; --p-hover: #be123c; --p-light: #fff1f2; --p-glow: rgba(225, 29, 72, 0.25);
+  --p-grad: linear-gradient(135deg, #e11d48 0%, #f43f5e 100%);
+}
+body[data-accent="amber"] {
+  --p: #d97706; --p-hover: #b45309; --p-light: #fffbeb; --p-glow: rgba(217, 119, 6, 0.25);
+  --p-grad: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+}
+body[data-accent="violet"] {
+  --p: #7c3aed; --p-hover: #6d28d9; --p-light: #f5f3ff; --p-glow: rgba(124, 58, 237, 0.25);
+  --p-grad: linear-gradient(135deg, #7c3aed 0%, #c026d3 100%);
+}
+
+body[data-mode="dark"] {
+  --bg: #0b0f19;
+  --bg-sidebar: #070a12;
+  --bg-sidebar-card: #131929;
+  --card: #111827;
+  --card-subtle: #1e293b;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #1e293b;
+  --border-subtle: #192237;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.45);
+  --p-light: rgba(79, 70, 229, 0.16);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-main);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+/* Сайдбар */
+.sidebar {
+  background: var(--bg-sidebar);
+  color: #fff;
+  padding: 24px 18px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  z-index: 100;
+  overflow-y: auto;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 12px 20px;
+}
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--p-grad);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+  box-shadow: 0 8px 18px var(--p-glow);
+}
+.brand-title {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+.brand-title span { color: #818cf8; }
+.brand-badge {
+  font-size: 10px;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: #cbd5e1;
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+/* Визитка учащегося в сайдбаре */
+.student-sidebar-card {
+  background: linear-gradient(145deg, rgba(79, 70, 229, 0.15) 0%, rgba(30, 41, 59, 0.8) 100%);
+  border: 1px solid rgba(129, 140, 248, 0.25);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.student-avatar-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #1e293b;
+  border: 2px solid #818cf8;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+.student-avatar-box svg { width: 100%; height: 100%; }
+.student-info-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.25;
+}
+.student-info-meta {
+  font-size: 11.5px;
+  color: #94a3b8;
+  line-height: 1.35;
+  margin-top: 3px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 11px 15px;
+  background: transparent;
+  color: #94a3b8;
+  border: 0;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+}
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+  transform: translateX(3px);
+}
+.nav-item.active {
+  background: var(--p-grad);
+  color: #ffffff;
+  box-shadow: 0 6px 20px var(--p-glow);
+}
+.nav-item svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.sidebar-stats {
+  background: var(--bg-sidebar-card);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  margin-top: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.sidebar-stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+.sidebar-stats-row strong { color: #f1f5f9; font-size: 14px; }
+.sidebar-progress {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.sidebar-progress-bar {
+  height: 100%;
+  background: var(--p-grad);
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+/* Главная область */
+.main { min-width: 0; display: flex; flex-direction: column; }
+
+.topbar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+}
+.topbar-lead { display: flex; align-items: center; gap: 14px; }
+.mobile-toggle {
+  display: none;
+  background: var(--card-subtle);
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: 10px;
+  color: var(--text);
+  cursor: pointer;
+}
+.topbar-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.35;
+}
+.topbar-title-highlight {
+  background: var(--p-light);
+  color: var(--p);
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 13.5px;
+  display: inline-block;
+}
+.topbar-actions { display: flex; align-items: center; gap: 10px; }
+
+.theme-picker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--card-subtle);
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+.theme-picker label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.theme-picker select {
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Floating Widgets Buttons */
+.fab-container {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 500;
+}
+.fab-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--p);
+  color: #fff;
+  border: 0;
+  box-shadow: 0 10px 25px var(--p-glow), 0 4px 10px rgba(0,0,0,0.15);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+.fab-btn:hover {
+  transform: scale(1.1) translateY(-2px);
+  background: var(--p-hover);
+}
+
+.content-wrap {
+  width: min(1320px, 94%);
+  margin: 26px auto 90px;
+  flex: 1;
+}
+.page { display: none; }
+.page.active {
+  display: block;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero */
+.hero-banner {
+  background: var(--p-grad);
+  color: white;
+  border-radius: var(--radius-xl);
+  padding: 38px 44px;
+  margin-bottom: 26px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), 0 10px 30px var(--p-glow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.hero-banner-content { max-width: 680px; position: relative; z-index: 2; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+.hero-banner h1 {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+  margin-bottom: 12px;
+}
+.hero-banner p { font-size: 15.5px; opacity: 0.94; line-height: 1.6; }
+.hero-actions { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-hero {
+  background: #ffffff;
+  color: var(--p);
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  border: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.btn-hero:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.18); }
+.btn-hero-ghost {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+.btn-hero-ghost:hover { background: rgba(255, 255, 255, 0.25); }
+
+.hero-illustration-box {
+  width: 290px;
+  height: 220px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-illustration-box svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.25));
+}
+
+/* Персональная карточка ученика */
+.student-featured-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--p);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+}
+.student-featured-content {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.student-big-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: var(--p-grad);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 28px;
+  box-shadow: 0 8px 20px var(--p-glow);
+  flex-shrink: 0;
+}
+.student-featured-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.student-featured-sub {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+.student-featured-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Quick Daily Blitz Card */
+.blitz-card {
+  background: var(--card);
+  border: 2px solid var(--p);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 10px 30px var(--p-glow);
+  position: relative;
+  overflow: hidden;
+}
+.blitz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Stat Grid */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.stat-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--p-light);
+  color: var(--p);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.stat-meta small { font-size: 13px; color: var(--text-muted); font-weight: 500; display: block; }
+.stat-meta strong { font-size: 24px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
+
+/* Section Headers */
+.section-head {
+  margin-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.section-tag {
+  font-size: 12px;
+  color: var(--p);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 4px;
+}
+.section-title { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+.section-desc { font-size: 14.5px; color: var(--text-muted); max-width: 650px; }
+
+/* Subjects Grid with Custom Visual Illustrations */
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  gap: 22px;
+  margin-bottom: 35px;
+}
+.subject-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+.subject-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--p);
+  box-shadow: var(--shadow-lg), 0 8px 24px var(--p-glow);
+}
+.subject-card-img {
+  width: 100%;
+  height: 135px;
+  background: #1e293b;
+  overflow: hidden;
+  position: relative;
+}
+.subject-card-img svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.subject-card:hover .subject-card-img svg { transform: scale(1.04); }
+.subject-card-body {
+  padding: 18px 20px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.subject-card-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--text);
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.subject-card-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  flex: 1;
+}
+.subject-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--p);
+}
+
+/* Cards & Containers */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-sm);
+}
+.cols-2 {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+/* Forms & Toolbars */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  background: var(--card-subtle);
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+}
+.toolbar input, .toolbar select {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.toolbar input:focus, .toolbar select:focus, textarea:focus {
+  border-color: var(--p);
+  box-shadow: 0 0 0 3px var(--p-glow);
+}
+.toolbar input { flex: 1; min-width: 220px; }
+
+button {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  border: 0;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: center;
+}
+.btn-primary {
+  background: var(--p);
+  color: #fff;
+  box-shadow: 0 4px 12px var(--p-glow);
+}
+.btn-primary:hover { background: var(--p-hover); transform: translateY(-1px); }
+.btn-secondary { background: var(--p-light); color: var(--p); }
+.btn-secondary:hover { filter: brightness(0.95); transform: translateY(-1px); }
+.btn-danger {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+.btn-danger:hover { background: var(--danger); color: #fff; }
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.btn-outline:hover { background: var(--card-subtle); }
+
+/* Badges / Tags */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--card-subtle);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+}
+.tag-p { background: var(--p-light); color: var(--p); border-color: transparent; }
+.tag-level-1 { background: #ecfdf5; color: #059669; }
+.tag-level-2 { background: #fffbeb; color: #d97706; }
+.tag-level-3 { background: #fef2f2; color: #dc2626; }
+
+/* Question Cards */
+.question-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.question-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--p);
+}
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.question-body {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.question-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.solution-panel {
+  display: none;
+  background: var(--card-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin-top: 16px;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.solution-panel.open { display: block; animation: fadeIn 0.25s ease; }
+.solution-panel strong { color: var(--p); }
+
+/* Dynamic Subject Banner */
+.dynamic-subject-banner {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 22px;
+  height: 130px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+.dynamic-subject-banner svg { width: 100%; height: 100%; display: block; }
+
+/* Exam Mode */
+.exam-test-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-top: 20px;
+}
+.exam-question-card {
+  background: var(--card-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 18px;
+}
+.exam-question-card h3 { font-size: 16px; margin: 12px 0 14px; font-weight: 600; }
+.exam-input {
+  width: 100%;
+  max-width: 480px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+}
+.exam-input:focus { border-color: var(--p); box-shadow: 0 0 0 3px var(--p-glow); }
+.timer-chip {
+  background: var(--danger-bg);
+  color: var(--danger);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Exam Result Card */
+.result-header-card {
+  background: var(--p-grad);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.result-score-num { font-size: 48px; font-weight: 900; line-height: 1; margin: 8px 0; }
+.result-item-card {
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  border-left: 4px solid var(--border);
+  background: var(--card-subtle);
+  font-size: 14.5px;
+}
+.result-item-card.correct { border-left-color: var(--success); }
+.result-item-card.incorrect { border-left-color: var(--danger); }
+
+/* Planner / Tasks */
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+.task-row:hover { background: var(--card-subtle); }
+.task-row.overdue { border-left: 4px solid var(--danger); }
+.task-check { width: 20px; height: 20px; accent-color: var(--p); cursor: pointer; }
+.task-content { flex: 1; min-width: 0; }
+.task-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.task-row.done .task-title { text-decoration: line-through; color: var(--text-muted); }
+.task-sub { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
+
+/* Notes Grid */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 18px;
+}
+.note-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: all 0.2s ease;
+}
+.note-item:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.note-title { font-size: 16px; font-weight: 700; margin: 10px 0 6px; color: var(--text); }
+.note-body {
+  font-size: 14px;
+  color: var(--text-muted);
+  white-space: pre-wrap;
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 14px;
+}
+
+/* Cheat Sheet / Справочник */
+.cheat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+.cheat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+.cheat-title {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--p);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cheat-formula-box {
+  background: var(--card-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* Флеш-карточки (Интерактивный режим) */
+.flashcard-wrap {
+  perspective: 1000px;
+  margin-bottom: 25px;
+}
+.flashcard-inner {
+  background: var(--card);
+  border: 2px solid var(--p);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.flashcard-inner:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), 0 8px 24px var(--p-glow);
+}
+.flashcard-q { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 14px; }
+.flashcard-a {
+  font-size: 16px;
+  font-family: var(--font-mono);
+  color: var(--p);
+  background: var(--p-light);
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  display: none;
+}
+.flashcard-a.revealed { display: inline-block; animation: fadeIn 0.25s ease; }
+
+/* Achievements */
+.achieve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+.achieve-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.achieve-card.locked { opacity: 0.55; filter: grayscale(0.8); }
+.achieve-card.unlocked { border-color: var(--success); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15); }
+.achieve-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--p-light);
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+/* Помодоро таймер */
+.pomo-wrap {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  max-width: 520px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+}
+.pomo-digits {
+  font-family: var(--font-mono);
+  font-size: clamp(64px, 12vw, 92px);
+  font-weight: 800;
+  color: var(--p);
+  margin: 20px 0;
+  letter-spacing: -2px;
+}
+.pomo-mode-tabs {
+  display: inline-flex;
+  background: var(--card-subtle);
+  padding: 6px;
+  border-radius: 99px;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.pomo-tab-btn {
+  background: transparent;
+  border: 0;
+  padding: 8px 18px;
+  border-radius: 99px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.pomo-tab-btn.active {
+  background: var(--card);
+  color: var(--p);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* НОВАЯ ФУНКЦИЯ 1: Калькулятор баллов */
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.calc-display-box {
+  background: var(--card-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.calc-big-score {
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--p);
+  line-height: 1;
+  margin: 12px 0 6px;
+}
+
+/* НОВАЯ ФУНКЦИЯ 2: Звуки для учёбы (Ambient Sound Studio) */
+.ambient-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+.ambient-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.ambient-card.active {
+  border-color: var(--p);
+  box-shadow: 0 8px 24px var(--p-glow);
+  background: var(--card-subtle);
+}
+.ambient-icon { font-size: 38px; margin-bottom: 10px; }
+
+/* Интерактивный Черновик (Виртуальная Доска) */
+.scratchpad-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.scratchpad-modal.open { display: flex; animation: fadeIn 0.25s ease; }
+.scratchpad-window {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  width: min(900px, 95vw);
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35);
+}
+.scratchpad-bar {
+  padding: 12px 18px;
+  background: var(--card-subtle);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.scratchpad-canvas {
+  flex: 1;
+  background: #ffffff;
+  cursor: crosshair;
+  touch-action: none;
+}
+body[data-mode="dark"] .scratchpad-canvas { background: #1e293b; }
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #0f172a;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  display: none;
+  z-index: 1200;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.toast.show { display: flex; animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+  resize: vertical;
+  min-height: 80px;
+  margin-bottom: 14px;
+}
+
+.empty-box {
+  padding: 44px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card-subtle);
+}
+.empty-box span { font-size: 38px; display: block; margin-bottom: 10px; }
+
+/* Печать заданий (Print Stylesheet) */
+@media print {
+  .sidebar, .topbar, .fab-container, .toolbar, .hero-actions, .btn-hero, .btn-primary, .btn-secondary, .btn-outline, .btn-danger {
+    display: none !important;
+  }
+  .shell { display: block; }
+  .content-wrap { width: 100% !important; margin: 0 !important; }
+  .page { display: block !important; }
+  .card, .question-item { box-shadow: none !important; border: 1px solid #000 !important; page-break-inside: avoid; }
+  .solution-panel { display: block !important; }
+}
+
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar {
+    position: fixed;
+    left: -300px;
+    width: 280px;
+    transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .sidebar.open { left: 0; }
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+  }
+  .sidebar-backdrop.open { display: block; }
+  .mobile-toggle { display: inline-flex; }
+  .cols-2, .calc-grid { grid-template-columns: 1fr; }
+  .topbar { padding: 12px 18px; }
+  .content-wrap { width: 92%; margin-top: 18px; }
+  .hero-banner { padding: 26px 20px; flex-direction: column; align-items: flex-start; }
+  .hero-illustration-box { width: 100%; height: 160px; }
+}
+</style>
+</head>
+<body data-mode="light" data-accent="indigo">
+
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<div class="shell">
+  <!-- Сайдбар с расширенными разделами -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-icon">S</div>
+      <div>
+        <div class="brand-title">Study<span>Hub</span></div>
+        <span class="brand-badge">ULTIMATE 2026</span>
+      </div>
+    </div>
+    
+    <!-- Визитка ученика 40 школы г. Магнитогорска -->
+    <div class="student-sidebar-card">
+      <div class="student-avatar-box">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#1e1b4b"/>
+          <circle cx="50" cy="40" r="22" fill="#fcd34d"/>
+          <path d="M28 85 C28 65, 72 65, 72 85 Z" fill="#6366f1"/>
+          <!-- Очки -->
+          <circle cx="43" cy="38" r="7" stroke="#1e1b4b" stroke-width="2.5" fill="rgba(255,255,255,0.4)"/>
+          <circle cx="57" cy="38" r="7" stroke="#1e1b4b" stroke-width="2.5" fill="rgba(255,255,255,0.4)"/>
+          <line x1="50" y1="38" x2="50" y2="38" stroke="#1e1b4b" stroke-width="2.5"/>
+          <!-- Академическая шапочка -->
+          <polygon points="50,14 74,22 50,30 26,22" fill="#4338ca"/>
+          <line x1="74" y1="22" x2="78" y2="34" stroke="#fbbf24" stroke-width="2"/>
+          <circle cx="78" cy="35" r="2" fill="#fbbf24"/>
+        </svg>
+      </div>
+      <div>
+        <div class="student-info-name">Аитов Максим</div>
+        <div class="student-info-meta">Школа №40 · 10А класс<br>г. Магнитогорск</div>
+      </div>
+    </div>
+    
+    <nav class="nav">
+      <button class="nav-item active" data-page="home">
+        <svg viewBox="0 0 24 24"><path d="M3 13h1v7c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7h1a1 1 0 00.7-1.7L12.7 2.3a1 1 0 00-1.4 0L2.3 11.3A1 1 0 003 13zm9-8.3l6 5.4V20h-4v-5h-4v5H6v-9.9l6-5.4z"/></svg>
+        Главная
+      </button>
+      <button class="nav-item" data-page="bank">
+        <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+        Банк заданий
+      </button>
+      <button class="nav-item" data-page="exam">
+        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+        Тренажёр ЕГЭ / ОГЭ
+      </button>
+      <button class="nav-item" data-page="cheatsheet">
+        <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm9 16H6V4h1v9l3-2.25L13 13V4h5v16z"/></svg>
+        📖 Справочник формул
+      </button>
+      <button class="nav-item" data-page="calculator">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 16H7c-.55 0-1-.45-1-1s.45-1 1-1h10c.55 0 1 .45 1 1s-.45 1-1 1zm0-4H7c-.55 0-1-.45-1-1s.45-1 1-1h10c.55 0 1 .45 1 1s-.45 1-1 1zm0-4H7c-.55 0-1-.45-1-1s.45-1 1-1h10c.55 0 1 .45 1 1s-.45 1-1 1zm0-4H7c-.55 0-1-.45-1-1s.45-1 1-1h10c.55 0 1 .45 1 1s-.45 1-1 1z"/></svg>
+        🧮 Калькулятор баллов
+      </button>
+      <button class="nav-item" data-page="ambient">
+        <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+        🎧 Звуки для учёбы
+      </button>
+      <button class="nav-item" data-page="pomodoro">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+        ⏱ Помодоро-таймер
+      </button>
+      <button class="nav-item" data-page="planner">
+        <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM10.5 10.5l-3 3 1.4 1.4 1.6-1.6 4.6 4.6 1.4-1.4z"/></svg>
+        Планировщик
+      </button>
+      <button class="nav-item" data-page="notes">
+        <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+        База заметок
+      </button>
+      <button class="nav-item" data-page="achievements">
+        <svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0011 15.9V19H7v2h10v-2h-4v-3.1a5.01 5.01 0 003.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
+        🏆 Достижения
+      </button>
+    </nav>
+    
+    <div class="sidebar-stats">
+      <div class="sidebar-stats-row">
+        <span>Прогресс базы</span>
+        <strong id="sidebarPct">0%</strong>
+      </div>
+      <div class="sidebar-progress">
+        <div class="sidebar-progress-bar" id="sidebarBar"></div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px; font-size:12px; color:#cbd5e1;">
+        <span>Уровень: <strong id="userLevelBadge">1</strong></span>
+        <span>⚡ <strong id="sidebarXp">0</strong> XP</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Плавающая кнопка для Черновика / Доски для рисования -->
+  <div class="fab-container">
+    <button class="fab-btn" id="openScratchpad" title="Открыть черновик для вычислений">✍️</button>
+  </div>
+
+  <!-- Главное пространство -->
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-lead">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Открыть меню">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <div class="topbar-title">
+          <span>🎓</span>
+          <div>
+            <strong>ученик 40 школы города Магнитогорска 10А класса Аитов Максим</strong>
+            <span class="topbar-title-highlight" style="margin-left:8px;">StudyHub Ultimate</span>
+          </div>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn-outline" onclick="window.print()" title="Распечатать материалы" style="padding:6px 12px; font-size:12.5px;">🖨 Печать</button>
+        <div class="theme-picker">
+          <label for="accentSelect">Цвет</label>
+          <select id="accentSelect">
+            <option value="indigo">Индиго</option>
+            <option value="emerald">Изумруд</option>
+            <option value="crimson">Малина</option>
+            <option value="amber">Янтарь</option>
+            <option value="violet">Фиолет</option>
+          </select>
+        </div>
+        <div class="theme-picker">
+          <label for="modeSelect">Тема</label>
+          <select id="modeSelect">
+            <option value="light">Светлая</option>
+            <option value="dark">Тёмная</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="content-wrap">
+      <!-- 1. HOME PAGE -->
+      <section class="page active" id="home">
+        <!-- Авторская плашка ученика -->
+        <div class="student-featured-card">
+          <div class="student-featured-content">
+            <div class="student-big-badge">🎓</div>
+            <div>
+              <div class="student-featured-title">Проект подготовлен: ученик 40 школы города Магнитогорска 10А класса Аитов Максим</div>
+              <div class="student-featured-sub">Индивидуальный цифровой тренажёр и образовательная платформа для подготовки к ЕГЭ и ОГЭ 2026</div>
+            </div>
+          </div>
+          <div class="student-featured-tags">
+            <span class="tag tag-p">Школа №40</span>
+            <span class="tag">10А класс</span>
+            <span class="tag">г. Магнитогорск</span>
+            <span class="tag tag-level-1">ЕГЭ / ОГЭ 2026</span>
+          </div>
+        </div>
+
+        <div class="hero-banner">
+          <div class="hero-banner-content">
+            <div class="hero-badge">⚡ Обновление 2026: Калькулятор баллов, Аудио-фокус и Флеш-карты</div>
+            <h1>Учись системно, сдавай экзамены на 90+</h1>
+            <p>Персональная среда подготовки к ЕГЭ и ОГЭ: тренировка реальных задач, симуляция экзамена, аудио-фокус, справочник формул и отслеживание ачивок.</p>
+            <div class="hero-actions">
+              <button class="btn-hero" data-page="bank">📚 Банк заданий</button>
+              <button class="btn-hero btn-hero-ghost" data-page="calculator">🧮 Калькулятор баллов</button>
+              <button class="btn-hero btn-hero-ghost" data-page="cheatsheet">📖 Справочник формул</button>
+              <button class="btn-hero btn-hero-ghost" data-page="exam">⏱ Тест на время</button>
+            </div>
+          </div>
+
+          <!-- Красивая векторная иллюстрация к баннеру -->
+          <div class="hero-illustration-box">
+            <svg viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="50" width="260" height="150" rx="16" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+              <!-- Ноутбук и график -->
+              <rect x="50" y="70" width="220" height="110" rx="10" fill="#0f172a" fill-opacity="0.8"/>
+              <polyline points="70,140 110,120 150,130 190,95 240,110" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="240" cy="110" r="6" fill="#38bdf8"/>
+              <!-- Стопка книг -->
+              <rect x="20" y="175" width="85" height="18" rx="4" fill="#fbbf24"/>
+              <rect x="25" y="153" width="75" height="18" rx="4" fill="#f43f5e"/>
+              <rect x="32" y="132" width="60" height="17" rx="4" fill="#34d399"/>
+              <!-- Академическая шапка -->
+              <g transform="translate(195, 25)">
+                <polygon points="45,5 90,20 45,35 0,20" fill="#ffffff"/>
+                <path d="M15,28 C15,48 75,48 75,28" fill="#e2e8f0"/>
+                <line x1="88" y1="21" x2="96" y2="40" stroke="#f59e0b" stroke-width="3"/>
+                <circle cx="96" cy="42" r="3.5" fill="#f59e0b"/>
+              </g>
+              <!-- Сияющие звёзды и формулы -->
+              <circle cx="160" cy="35" r="3" fill="#ffffff" opacity="0.8"/>
+              <circle cx="280" cy="80" r="4" fill="#fbbf24" opacity="0.9"/>
+              <text x="110" y="88" font-family="'JetBrains Mono', monospace" font-size="11" fill="#a5b4fc">E = mc² · 100 баллов</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Быстрый блиц дня (Интерактивная разминка) -->
+        <div class="blitz-card" id="dailyBlitzBox">
+          <div class="blitz-header">
+            <div>
+              <span class="section-tag">Интеллектуальная разминка</span>
+              <h3 style="font-size: 19px; font-weight:800;">🔥 Экспресс-вопрос дня (+10 XP)</h3>
+            </div>
+            <button class="btn-secondary" id="nextBlitzBtn" style="font-size:12.5px;">🎲 Другой вопрос</button>
+          </div>
+          <div id="blitzContent">
+            <p id="blitzQuestion" style="font-size:16px; font-weight:600; margin-bottom:14px;"></p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+              <input type="text" id="blitzInput" placeholder="Введите ваш ответ..." style="max-width:320px; font-family:var(--font-mono);">
+              <button class="btn-primary" id="blitzCheckBtn">Проверить</button>
+              <span id="blitzResultMsg" style="font-weight:700; font-size:14px;"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Статистика -->
+        <div class="stat-grid" id="statsGrid"></div>
+
+        <!-- Каталог предметов с картинками -->
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Каталог дисциплин</span>
+            <h2 class="section-title">Предметы подготовки</h2>
+            <p class="section-desc">Кликните на карточку с иллюстрацией, чтобы открыть тренировку по предмету</p>
+          </div>
+        </div>
+        <div class="subjects-grid" id="subjectCards"></div>
+
+        <!-- Прогресс и советы -->
+        <div class="cols-2">
+          <div class="card">
+            <span class="section-tag">Учебный прогресс</span>
+            <h3 style="font-size: 20px; font-weight: 800; margin: 4px 0 10px;">Статистика освоения базы</h3>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">
+              Отмечай решённые задачи и следи за динамикой подготовки.
+            </p>
+            <div style="background: var(--card-subtle); height: 12px; border-radius: 99px; overflow: hidden; margin-bottom: 10px; border: 1px solid var(--border);">
+              <div id="homeProgressBar" style="height: 100%; width: 0%; background: var(--p-grad); transition: width 0.4s ease;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13.5px; color: var(--text-muted); font-weight: 600;">
+              <span id="homeProgressLabel">0 решено</span>
+              <span id="homeProgressPct">0%</span>
+            </div>
+            <div style="margin-top: 20px; display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn-primary" data-page="bank">Банк заданий →</button>
+              <button class="btn-secondary" data-page="calculator">Перевод баллов 🧮</button>
+              <button class="btn-secondary" data-page="achievements">Мои награды 🏆</button>
+            </div>
+          </div>
+
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="section-tag">Учебная тактика</span>
+              <h3 style="font-size: 20px; font-weight: 800; margin: 4px 0 10px;">Фокус и концентрация</h3>
+              <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">
+                Мозг лучше всего концентрируется короткими сессиями 25+5 Помодоро вместе со звуками спокойного окружения (шум дождя, бинауральные ритмы).
+              </p>
+            </div>
+            <div style="margin-top: 18px; display:flex; gap:10px;">
+              <button class="btn-primary" data-page="pomodoro" style="flex:1;">Таймер ⏱</button>
+              <button class="btn-secondary" data-page="ambient" style="flex:1;">Звуки фокуса 🎧</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. BANK OF QUESTIONS -->
+      <section class="page" id="bank">
+        <div id="bankSubjectBanner" class="dynamic-subject-banner" style="display:none;"></div>
+
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Интерактивный тренажёр</span>
+            <h2 class="section-title">Банк типовых заданий</h2>
+            <p class="section-desc">Авторские задачи КИМ ЕГЭ и ОГЭ. Тренируйся самостоятельно с мгновенным доступом к пошаговым решениям.</p>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <select id="bankSubject"></select>
+          <select id="bankExam">
+            <option value="all">ЕГЭ и ОГЭ (все форматы)</option>
+            <option value="ЕГЭ">Только ЕГЭ</option>
+            <option value="ОГЭ">Только ОГЭ</option>
+          </select>
+          <select id="bankLevel">
+            <option value="all">Любой уровень</option>
+            <option value="1">Базовый</option>
+            <option value="2">Средний</option>
+            <option value="3">Повышенный</option>
+          </select>
+          <select id="bankFilter">
+            <option value="all">Все карточки</option>
+            <option value="new">Только нерешённые</option>
+            <option value="saved">Только закладки ★</option>
+            <option value="done">Только решённые ✓</option>
+          </select>
+          <input type="text" id="bankSearch" placeholder="🔍 Поиск по номеру, теме или тексту задания...">
+          <button class="btn-secondary" id="surprise">🎲 Случайное</button>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; padding: 0 4px;">
+          <span style="font-size: 14px; font-weight: 700; color: var(--text);" id="bankCount">Найдено 0 заданий</span>
+          <span style="font-size: 13px; color: var(--text-muted);">Нажми «Разбор», чтобы сверить решение</span>
+        </div>
+
+        <div id="bankList"></div>
+      </section>
+
+      <!-- 3. EXAM SIMULATION -->
+      <section class="page" id="exam">
+        <div id="examSubjectBanner" class="dynamic-subject-banner" style="display:none;"></div>
+
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Симуляция экзамена</span>
+            <h2 class="section-title">Тестирование ЕГЭ / ОГЭ</h2>
+            <p class="section-desc">Чистый режим без подсказок: вводите результат вручную. Анализ ошибок и разборы откроются после завершения теста.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="toolbar" style="margin-bottom: 0;">
+            <select id="examSubject"></select>
+            <select id="examType">
+              <option value="ЕГЭ">Формат: ЕГЭ</option>
+              <option value="ОГЭ">Формат: ОГЭ</option>
+              <option value="all">Смешанный (ЕГЭ+ОГЭ)</option>
+            </select>
+            <select id="examCount">
+              <option value="5">5 заданий</option>
+              <option value="8" selected>8 заданий</option>
+              <option value="12">12 заданий</option>
+            </select>
+            <select id="examTimer">
+              <option value="0">Без ограничения времени</option>
+              <option value="600">10 минут</option>
+              <option value="1200">20 минут</option>
+              <option value="1800">30 минут</option>
+              <option value="2700">45 минут</option>
+            </select>
+            <button class="btn-primary" id="startExam">🚀 Начать тест</button>
+            <button class="btn-danger" id="submitExam" style="display: none;">🏁 Завершить досрочно</button>
+          </div>
+          
+          <div id="examTimerStatus" style="margin-top: 14px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: var(--text-muted);">
+            <span>Выберите настройки и нажмите «Начать тест».</span>
+          </div>
+
+          <div id="examWork" style="margin-top: 20px;"></div>
+          <div id="examResult" style="margin-top: 24px;"></div>
+        </div>
+      </section>
+
+      <!-- 4. CHEAT SHEET / СПРАВОЧНИК ФОРМУЛ И ПРАВИЛ -->
+      <section class="page" id="cheatsheet">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">База знаний</span>
+            <h2 class="section-title">Справочник ключевых формул и правил</h2>
+            <p class="section-desc">Быстрый доступ к главным теоретическим блокам, формулам и критериям экзаменов с интерактивным режимом флеш-карт.</p>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn-secondary" id="toggleFlashcardsBtn">🎴 Режим флеш-карт</button>
+          </div>
+        </div>
+
+        <!-- Интерактивная флеш-карта (появляется по кнопке) -->
+        <div id="flashcardSection" style="display:none;">
+          <div class="flashcard-wrap">
+            <div class="flashcard-inner" id="activeFlashcard">
+              <span class="tag tag-p" id="fcSubject" style="margin-bottom:12px;">Предмет</span>
+              <div class="flashcard-q" id="fcQuestion">Нажмите, чтобы увидеть вопрос</div>
+              <div class="flashcard-a" id="fcAnswer">Формула / Правило</div>
+              <div style="font-size:12px; color:var(--text-muted); margin-top:16px;">💡 Кликните по карточке, чтобы перевернуть</div>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:center; gap:12px; margin-bottom:24px;">
+            <button class="btn-secondary" id="fcPrevBtn">← Назад</button>
+            <button class="btn-primary" id="fcNextBtn">Следующая карточка →</button>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <select id="cheatSubjectFilter">
+            <option value="all">Все дисциплины</option>
+            <option value="Математика">Математика</option>
+            <option value="Русский язык">Русский язык</option>
+            <option value="Информатика">Информатика</option>
+            <option value="Физика">Физика</option>
+            <option value="Химия">Химия</option>
+            <option value="Биология">Биология</option>
+            <option value="История">История</option>
+            <option value="География">География</option>
+          </select>
+          <input type="text" id="cheatSearchInput" placeholder="🔍 Поиск по правилу или формуле...">
+        </div>
+
+        <div class="cheat-grid" id="cheatSheetContainer"></div>
+      </section>
+
+      <!-- 5. НОВАЯ СТРАНИЦА: КАЛЬКУЛЯТОР БАЛЛОВ ЕГЭ / ОГЭ -->
+      <section class="page" id="calculator">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Шкала перевода</span>
+            <h2 class="section-title">Калькулятор баллов ЕГЭ и ОГЭ 2026</h2>
+            <p class="section-desc">Узнай, как первичные баллы конвертируются в 100-балльную систему ЕГЭ или оценку ОГЭ (2–5).</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="calc-grid">
+            <div>
+              <h3 style="font-size: 17px; font-weight:700; margin-bottom:14px;">Параметры экзамена</h3>
+              
+              <div style="margin-bottom:14px;">
+                <label style="font-size:13px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:6px;">Тип аттестации:</label>
+                <select id="calcExamType" style="width:100%; padding:10px; border-radius:var(--radius-sm); border:1px solid var(--border); font-size:14px;">
+                  <option value="ege">ЕГЭ (100-балльная шкала)</option>
+                  <option value="oge">ОГЭ (5-балльная шкала)</option>
+                </select>
+              </div>
+
+              <div style="margin-bottom:14px;">
+                <label style="font-size:13px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:6px;">Учебный предмет:</label>
+                <select id="calcSubject" style="width:100%; padding:10px; border-radius:var(--radius-sm); border:1px solid var(--border); font-size:14px;">
+                  <option value="math">Математика (Профиль)</option>
+                  <option value="rus">Русский язык</option>
+                  <option value="inf">Информатика</option>
+                  <option value="phys">Физика</option>
+                  <option value="chem">Химия</option>
+                  <option value="bio">Биология</option>
+                  <option value="hist">История</option>
+                  <option value="geo">География</option>
+                </select>
+              </div>
+
+              <div style="margin-bottom:14px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                  <label style="font-size:13px; font-weight:600; color:var(--text-muted);">Первичный балл:</label>
+                  <span id="calcPrimaryLabel" style="font-weight:800; color:var(--p); font-size:16px;">18 из 32</span>
+                </div>
+                <input type="range" id="calcScoreRange" min="0" max="32" value="18" style="width:100%; accent-color:var(--p); cursor:pointer;">
+              </div>
+
+              <div style="font-size:13px; color:var(--text-muted); line-height:1.5; background:var(--card-subtle); padding:12px; border-radius:var(--radius-sm);">
+                ℹ️ Шкала пересчёта адаптирована под актуальные таблицы ФИПИ. Используйте ползунок для моментального расчёта тестового балла.
+              </div>
+            </div>
+
+            <div class="calc-display-box">
+              <span class="tag tag-p" id="calcVerdictBadge">Хороший результат</span>
+              <div class="calc-big-score" id="calcResultNumber">72</div>
+              <div style="font-size:18px; font-weight:800; color:var(--text); margin-bottom:8px;" id="calcScoreSubtitle">Тестовый балл (из 100)</div>
+              <p style="font-size:14px; color:var(--text-muted); max-width:320px;" id="calcComment">
+                Преодолен порог для поступления в большинство вузов. Рекомендуется повторить задачи части 2.
+              </p>
+              <div style="margin-top:20px; width:100%; background:var(--border); height:8px; border-radius:99px; overflow:hidden;">
+                <div id="calcProgressFill" style="width:72%; height:100%; background:var(--p-grad); transition:width 0.3s ease;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. НОВАЯ СТРАНИЦА: ЗВУКИ ДЛЯ УЧЁБЫ (AMBIENT FOCUS) -->
+      <section class="page" id="ambient">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Звуковая концентрация</span>
+            <h2 class="section-title">Аудио-фокус для глубокой учёбы</h2>
+            <p class="section-desc">Встроенный генератор фоновых звуков (Web Audio API) без интернета. Помогает заглушить внешний шум и войти в состояние потока.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <button class="btn-primary" id="ambientMasterToggle">▶ Включить аудио-фокус</button>
+              <span id="ambientCurrentLabel" style="font-weight:700; color:var(--text-muted); font-size:14px;">Звук отключен</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:13px; font-weight:600; color:var(--text-muted);">Громкость:</span>
+              <input type="range" id="ambientVolume" min="0" max="100" value="40" style="accent-color:var(--p); width:130px; cursor:pointer;">
+            </div>
+          </div>
+
+          <div class="ambient-cards-grid">
+            <div class="ambient-card active" data-ambient="rain">
+              <div class="ambient-icon">🌧</div>
+              <h4 style="font-size:16px; font-weight:800; margin-bottom:4px;">Мягкий дождь</h4>
+              <p style="font-size:13px; color:var(--text-muted);">Розовый шум с фильтрацией капель для максимального успокоения</p>
+            </div>
+            <div class="ambient-card" data-ambient="white">
+              <div class="ambient-icon">📻</div>
+              <h4 style="font-size:16px; font-weight:800; margin-bottom:4px;">Белый шум</h4>
+              <p style="font-size:13px; color:var(--text-muted);">Равномерный спектр частот, блокирующий посторонние разговоры</p>
+            </div>
+            <div class="ambient-card" data-ambient="binaural">
+              <div class="ambient-icon">🧠</div>
+              <h4 style="font-size:16px; font-weight:800; margin-bottom:4px;">Альфа-волны (12 Гц)</h4>
+              <p style="font-size:13px; color:var(--text-muted);">Мягкий бинауральный тон для быстрого запоминания формул</p>
+            </div>
+            <div class="ambient-card" data-ambient="fire">
+              <div class="ambient-icon">🔥</div>
+              <h4 style="font-size:16px; font-weight:800; margin-bottom:4px;">Потрескивание камина</h4>
+              <p style="font-size:13px; color:var(--text-muted);">Уютная атмосфера вечерней библиотеки</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. POMODORO FOCUS TIMER -->
+      <section class="page" id="pomodoro">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Продуктивность</span>
+            <h2 class="section-title">Помодоро-таймер фокусировки</h2>
+            <p class="section-desc">25 минут интенсивного решения задач без уведомлений, затем 5 минут отдыха.</p>
+          </div>
+        </div>
+
+        <div class="pomo-wrap">
+          <div class="pomo-mode-tabs">
+            <button class="pomo-tab-btn active" data-pomo="25">📚 Учёба (25 мин)</button>
+            <button class="pomo-tab-btn" data-pomo="5">☕ Отдых (5 мин)</button>
+            <button class="pomo-tab-btn" data-pomo="15">🌴 Длинный перерыв (15 мин)</button>
+          </div>
+
+          <div class="pomo-digits" id="pomoTimerDisplay">25:00</div>
+
+          <div style="display:flex; justify-content:center; gap:12px; margin-bottom:24px;">
+            <button class="btn-primary" id="pomoToggleBtn" style="padding:14px 34px; font-size:16px;">▶ Запустить</button>
+            <button class="btn-outline" id="pomoResetBtn" style="padding:14px 20px;">↺ Сброс</button>
+          </div>
+
+          <div style="font-size:14px; color:var(--text-muted); padding-top:16px; border-top:1px solid var(--border);">
+            Завершено фокус-сессий сегодня: <strong style="color:var(--p);" id="pomoSessionCount">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. PLANNER -->
+      <section class="page" id="planner">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Тайм-менеджмент</span>
+            <h2 class="section-title">Планировщик подготовки</h2>
+            <p class="section-desc">Ставь цели, фиксируй дедлайны по темам и контролируй закрытие учебных долгов.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size: 17px; font-weight: 700; margin-bottom: 12px;">Добавить новое задание</h3>
+          <div class="toolbar" style="margin-bottom: 12px;">
+            <input id="taskTitle" placeholder="Что нужно сделать? Например: Выучить формулы стереометрии">
+            <select id="taskSubject"></select>
+            <input id="taskDate" type="date">
+            <button class="btn-primary" id="addTask">＋ Добавить</button>
+          </div>
+          <textarea id="taskDesc" placeholder="Дополнительные заметки, ссылки или страницы учебника (по желанию)"></textarea>
+
+          <div class="toolbar">
+            <span style="font-size: 13px; font-weight: 700; color: var(--text);">Фильтр:</span>
+            <select id="taskFilter">
+              <option value="all">Все задачи</option>
+              <option value="active">Только активные</option>
+              <option value="done">Выполненные</option>
+              <option value="overdue">Просроченные</option>
+            </select>
+            <div style="flex:1;"></div>
+            <button class="btn-outline" id="exportData">💾 Экспорт</button>
+            <button class="btn-outline" id="importData">📥 Импорт</button>
+            <input id="importFile" type="file" accept="application/json" hidden>
+            <button class="btn-danger" id="clearDone">Удалить выполненные</button>
+          </div>
+
+          <div id="taskList"></div>
+        </div>
+      </section>
+
+      <!-- 9. NOTES -->
+      <section class="page" id="notes">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">База знаний</span>
+            <h2 class="section-title">Мои учебные заметки</h2>
+            <p class="section-desc">Сохраняй формулы, капканы в критериях, правила орфографии и важные исторические даты.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size: 17px; font-weight: 700; margin-bottom: 12px;">Создать заметку</h3>
+          <div class="toolbar" style="margin-bottom: 12px;">
+            <input id="noteTitle" placeholder="Тема или заголовок (например: Свойства логарифмов)">
+            <select id="noteSubject"></select>
+            <button class="btn-primary" id="addNote">💾 Сохранить заметку</button>
+          </div>
+          <textarea id="noteText" placeholder="Текст заметки: формулы, исключения, важные тезисы..."></textarea>
+        </div>
+
+        <div class="notes-grid" id="notesList"></div>
+      </section>
+
+      <!-- 10. ACHIEVEMENTS -->
+      <section class="page" id="achievements">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Геймификация</span>
+            <h2 class="section-title">Твои учебные достижения</h2>
+            <p class="section-desc">Решай задачи, проходи тесты и зарабатывай новые ранги за усердие в учёбе.</p>
+          </div>
+        </div>
+
+        <div class="achieve-grid" id="achievementsGrid"></div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<!-- Виртуальный Черновик (Canvas Scratchpad) для формул и заметок -->
+<div class="scratchpad-modal" id="scratchModal">
+  <div class="scratchpad-window">
+    <div class="scratchpad-bar">
+      <div style="font-weight:700; font-size:15px; display:flex; align-items:center; gap:8px;">
+        <span>✍️ Черновик для расчётов и схем</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <input type="color" id="scratchColor" value="#4f46e5" style="width:34px; height:34px; padding:0; border:0; border-radius:6px; cursor:pointer;">
+        <button class="btn-outline" id="clearScratchBtn" style="padding:6px 14px; font-size:12.5px;">🧹 Очистить</button>
+        <button class="btn-danger" id="closeScratchBtn" style="padding:6px 14px; font-size:12.5px;">Закрыть</button>
+      </div>
+    </div>
+    <canvas id="scratchCanvas" class="scratchpad-canvas"></canvas>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ==========================================
+// 1. АУДИО-СИНТЕЗАТОР И АМБИЕНТ-ГЕНЕРАТОР (Web Audio API)
+// ==========================================
+let audioCtx = null;
+function getAudioContext() {
+  if (!audioCtx) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    audioCtx = new AudioContext();
+  }
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  return audioCtx;
+}
+
+function playSound(type) {
+  try {
+    const ctx = getAudioContext();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    const now = ctx.currentTime;
+
+    if (type === 'click') {
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(600, now);
+      osc.frequency.exponentialRampToValueAtTime(800, now + 0.05);
+      gain.gain.setValueAtTime(0.08, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+      osc.start(now);
+      osc.stop(now + 0.05);
+    } else if (type === 'success') {
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(523.25, now); // C5
+      osc.frequency.setValueAtTime(659.25, now + 0.08); // E5
+      osc.frequency.setValueAtTime(783.99, now + 0.16); // G5
+      gain.gain.setValueAtTime(0.12, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+      osc.start(now);
+      osc.stop(now + 0.35);
+    } else if (type === 'gong') {
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(440, now);
+      osc.frequency.exponentialRampToValueAtTime(220, now + 0.8);
+      gain.gain.setValueAtTime(0.25, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+      osc.start(now);
+      osc.stop(now + 0.8);
+    }
+  } catch (e) {}
+}
+
+// Генератор непрерывного фонового шума (Ambient Generator)
+let ambientNodes = null;
+let currentAmbientMode = 'rain';
+let ambientIsPlaying = false;
+
+function startAmbientSound(mode) {
+  stopAmbientSound();
+  const ctx = getAudioContext();
+  const masterGain = ctx.createGain();
+  const volVal = +($('ambientVolume')?.value || 40) / 100;
+  masterGain.gain.setValueAtTime(volVal * 0.25, ctx.currentTime);
+  masterGain.connect(ctx.destination);
+
+  if (mode === 'binaural') {
+    // 200 Hz слева, 212 Hz справа (12 Hz альфа-ритм)
+    const merger = ctx.createChannelMerger(2);
+    const oscL = ctx.createOscillator();
+    const oscR = ctx.createOscillator();
+    oscL.frequency.value = 200;
+    oscR.frequency.value = 212;
+    oscL.type = 'sine';
+    oscR.type = 'sine';
+    oscL.connect(merger, 0, 0);
+    oscR.connect(merger, 0, 1);
+    merger.connect(masterGain);
+    oscL.start();
+    oscR.start();
+    ambientNodes = { masterGain, stop: () => { oscL.stop(); oscR.stop(); } };
+  } else {
+    // Генерация шумового буфера для дождя, белого шума и камина
+    const bufferSize = ctx.sampleRate * 2;
+    const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const output = noiseBuffer.getChannelData(0);
+    let lastOut = 0.0;
+
+    for (let i = 0; i < bufferSize; i++) {
+      const white = Math.random() * 2 - 1;
+      if (mode === 'rain') {
+        // Розовый / коричневый шум
+        output[i] = (lastOut + (0.02 * white)) / 1.02;
+        lastOut = output[i];
+      } else if (mode === 'fire') {
+        // Треск камина
+        output[i] = Math.random() > 0.985 ? (Math.random() * 2 - 1) : white * 0.15;
+      } else {
+        // Чистый белый шум
+        output[i] = white * 0.3;
+      }
+    }
+
+    const whiteNoise = ctx.createBufferSource();
+    whiteNoise.buffer = noiseBuffer;
+    whiteNoise.loop = true;
+
+    const filter = ctx.createBiquadFilter();
+    if (mode === 'rain') {
+      filter.type = 'lowpass';
+      filter.frequency.value = 800;
+    } else if (mode === 'fire') {
+      filter.type = 'bandpass';
+      filter.frequency.value = 650;
+      filter.Q.value = 1.2;
+    } else {
+      filter.type = 'lowpass';
+      filter.frequency.value = 4000;
+    }
+
+    whiteNoise.connect(filter);
+    filter.connect(masterGain);
+    whiteNoise.start();
+
+    ambientNodes = { masterGain, stop: () => { whiteNoise.stop(); } };
+  }
+  ambientIsPlaying = true;
+}
+
+function stopAmbientSound() {
+  if (ambientNodes) {
+    try { ambientNodes.stop(); } catch(e) {}
+    ambientNodes = null;
+  }
+  ambientIsPlaying = false;
+}
+
+// ==========================================
+// 2. ИЛЛЮСТРАЦИИ ПРЕДМЕТОВ (SVG)
+// ==========================================
+const subjectIllustrations = {
+  'Математика': `
+    <svg viewBox="0 0 600 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mathGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#1e1b4b"/><stop offset="50%" stop-color="#312e81"/><stop offset="100%" stop-color="#4338ca"/>
+        </linearGradient>
+      </defs>
+      <rect width="600" height="300" fill="url(#mathGrad)"/>
+      <g stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5">
+        <line x1="0" y1="50" x2="600" y2="50"/><line x1="0" y1="100" x2="600" y2="100"/><line x1="0" y1="150" x2="600" y2="150"/>
+        <line x1="0" y1="200" x2="600" y2="200"/><line x1="0" y1="250" x2="600" y2="250"/><line x1="100" y1="0" x2="100" y2="300"/>
+        <line x1="200" y1="0" x2="200" y2="300"/><line x1="300" y1="0" x2="300" y2="300"/><line x1="400" y1="0" x2="400" y2="300"/>
+      </g>
+      <path d="M0,170 Q75,60 150,170 T300,170 T450,170 T600,170" fill="none" stroke="#818cf8" stroke-width="4" stroke-opacity="0.7"/>
+      <g font-family="'JetBrains Mono', monospace" fill="#a5b4fc" fill-opacity="0.3" font-size="20" font-weight="700">
+        <text x="40" y="70">2^(x+1) = 16</text>
+        <text x="350" y="80">∫ f(x)dx = F(x) + C</text>
+        <text x="420" y="160">log₂(x−1) = 3</text>
+        <text x="60" y="240">f'(x) = 2x − 6</text>
+      </g>
+      <g transform="translate(480, 80)">
+        <circle cx="0" cy="0" r="50" fill="#4f46e5" fill-opacity="0.4"/>
+        <text x="0" y="18" font-family="'Plus Jakarta Sans', sans-serif" font-size="52" font-weight="800" fill="#ffffff" text-anchor="middle">∑</text>
+      </g>
+      <text x="50" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">МАТЕМАТИКА</text>
+      <text x="52" y="178" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#c7d2fe" letter-spacing="2">УРАВНЕНИЯ · ГРАФИКИ · СТЕРЕОМЕТРИЯ</text>
+    </svg>`,
+
+  'Русский язык': `
+    <svg viewBox="0 0 600 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="rusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#4c0519"/><stop offset="50%" stop-color="#831843"/><stop offset="100%" stop-color="#be185d"/>
+        </linearGradient>
+      </defs>
+      <rect width="600" height="300" fill="url(#rusGrad)"/>
+      <g font-family="'Plus Jakarta Sans', serif" fill="#ffffff" fill-opacity="0.12" font-weight="900">
+        <text x="420" y="110" font-size="90">Аа</text><text x="310" y="250" font-size="110">Бб</text><text x="490" y="270" font-size="80">Ъ</text>
+      </g>
+      <g font-family="'JetBrains Mono', monospace" fill="#fda4af" fill-opacity="0.4" font-size="17" font-weight="700">
+        <text x="40" y="65">«Примирять» корень [мир]</text>
+        <text x="320" y="170">— суффикс -чик / -щик —</text>
+      </g>
+      <text x="50" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">РУССКИЙ ЯЗЫК</text>
+      <text x="52" y="178" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#fecdd3" letter-spacing="2">ОРФОГРАФИЯ · ПУНКТУАЦИЯ · ТЕКСТ</text>
+    </svg>`,
+
+  'Информатика': `
+    <svg viewBox="0 0 600 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="infGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#022c22"/><stop offset="50%" stop-color="#064e3b"/><stop offset="100%" stop-color="#0f766e"/>
+        </linearGradient>
+      </defs>
+      <rect width="600" height="300" fill="url(#infGrad)"/>
+      <g font-family="'JetBrains Mono', monospace" fill="#6ee7b7" fill-opacity="0.18" font-size="16">
+        <text x="30" y="40">01001001 01101110 01100110 01101111</text>
+        <text x="30" y="70">def ege_task17(data): return max(pairs)</text>
+      </g>
+      <rect x="360" y="130" width="200" height="120" rx="10" fill="#041f1a" stroke="#10b981" stroke-width="1.5" stroke-opacity="0.5"/>
+      <circle cx="380" cy="146" r="4" fill="#ef4444"/><circle cx="395" cy="146" r="4" fill="#f59e0b"/><circle cx="410" cy="146" r="4" fill="#10b981"/>
+      <text x="375" y="180" font-family="'JetBrains Mono', monospace" font-size="13" fill="#a7f3d0">&gt; python app.py</text>
+      <text x="375" y="205" font-family="'JetBrains Mono', monospace" font-size="13" fill="#34d399">11001₂ = 25₁₀</text>
+      <text x="50" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">ИНФОРМАТИКА</text>
+      <text x="52" y="178" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#a7f3d0" letter-spacing="2">АЛГОРИТМЫ · КОДИРОВАНИЕ · PYTHON</text>
+    </svg>`,
+
+  'Физика': `
+    <svg viewBox="0 0 600 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="physGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0b1329"/><stop offset="50%" stop-color="#1e293b"/><stop offset="100%" stop-color="#2563eb"/>
+        </linearGradient>
+      </defs>
+      <rect width="600" height="300" fill="url(#physGrad)"/>
+      <g transform="translate(460, 150)" stroke="#60a5fa" stroke-width="2" fill="none" opacity="0.6">
+        <ellipse rx="80" ry="28" transform="rotate(0)"/><ellipse rx="80" ry="28" transform="rotate(60)"/><ellipse rx="80" ry="28" transform="rotate(120)"/>
+        <circle cx="0" cy="0" r="10" fill="#3b82f6"/>
+      </g>
+      <text x="50" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">ФИЗИКА</text>
+      <text x="52" y="178" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#bfdbfe" letter-spacing="2">МЕХАНИКА · ТЕРМОДИНАМИКА · ОПТИКА</text>
+    </svg>`,
+
+  'Химия': `
+    <svg viewBox="0 0 600 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="chemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#042f2e"/><stop offset="50%" stop-color="#115e59"/><stop offset="100%" stop-color="#0d9488"/>
+        </linearGradient>
+      </defs>
+      <rect width="600" height="300" fill="url(#chemGrad)"/>
+      <g stroke="#5eead4" stroke-width="2.5" fill="none" opacity="0.45">
+        <polygon points="450,70 480,87 480,122 450,139 420,122 420,87"/><circle cx="450" cy="104.5" r="18"/>
+      </g>
+      <text x="50" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">ХИМИЯ</text>
+      <text x="52" y="178" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#99f6e4" letter-spacing="2">РЕАКЦИИ · ОРГАНИКА · ГИДРОЛИЗ</text>
+    </svg>`,
+
+  'Биология': `
+    <svg viewBox="0 0 600 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bioGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#14532d"/><stop offset="50%" stop-color="#166534"/><stop offset="100%" stop-color="#15803d"/>
+        </linearGradient>
+      </defs>
+      <rect width="600" height="300" fill="url(#bioGrad)"/>
+      <text x="50" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">БИОЛОГИЯ</text>
+      <text x="52" y="178" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#bbf7d0" letter-spacing="2">ГЕНЕТИКА · КЛЕТКА · ЭКОЛОГИЯ</text>
+    </svg>`,
+
+  'История': `
+    <svg viewBox="0 0 600 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="histGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#451a03"/><stop offset="50%" stop-color="#78350f"/><stop offset="100%" stop-color="#b45309"/>
+        </linearGradient>
+      </defs>
+      <rect width="600" height="300" fill="url(#histGrad)"/>
+      <text x="50" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">ИСТОРИЯ</text>
+      <text x="52" y="178" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#fde68a" letter-spacing="2">ХРОНОЛОГИЯ · КУЛЬТУРА · ДОКУМЕНТЫ</text>
+    </svg>`,
+
+  'География': `
+    <svg viewBox="0 0 600 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="geoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#082f49"/><stop offset="50%" stop-color="#0369a1"/><stop offset="100%" stop-color="#0284c7"/>
+        </linearGradient>
+      </defs>
+      <rect width="600" height="300" fill="url(#geoGrad)"/>
+      <text x="50" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">ГЕОГРАФИЯ</text>
+      <text x="52" y="178" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#bae6fd" letter-spacing="2">КАРТОГРАФИЯ · КЛИМАТ · РЕСУРСЫ</text>
+    </svg>`
+};
+
+// ==========================================
+// 3. БАЗА ЗАДАНИЙ (ПОЛНАЯ И СОХРАНЁННАЯ)
+// ==========================================
+const raw = {
+  'Математика': {
+    icon: '∑',
+    desc: 'Уравнения, логарифмы, функции, планиметрия и стереометрия',
+    q: [
+      ['ЕГЭ', 'Профиль · уравнения', 'Решите уравнение: 2^(x+1) = 16.', '16 = 2⁴, значит x + 1 = 4. Отсюда x = 3.', 'x=3', 1],
+      ['ЕГЭ', 'Профиль · производная', 'Найдите наибольшее значение функции f(x) = −x² + 6x на отрезке [0; 5].', 'Вершина параболы x = 3; f(3) = −9 + 18 = 9. На концах отрезка f(0)=0, f(5)=5. Наибольшее = 9.', '9', 2],
+      ['ЕГЭ', 'Профиль · вероятность', 'В коробке 4 красных и 6 синих шаров. Два шара достают без возвращения. Найдите вероятность, что оба шара окажутся красными.', 'Вероятность первого красного: 4/10. Второго: 3/9. P = (4/10)*(3/9) = 12/90 = 2/15.', '2/15', 2],
+      ['ЕГЭ', 'Профиль · финансовая математика', 'Вклад 100 000 рублей увеличивается на 10% ежегодно. Какой станет сумма через 2 года при ежегодной капитализации?', 'S = 100000 · (1 + 0.1)² = 100000 · 1.21 = 121000.', '121000', 2],
+      ['ЕГЭ', 'Профиль · стереометрия', 'Объём цилиндра с радиусом основания 3 и высотой 5 равен V. Найдите V/π.', 'V = π · r² · h = π · 9 · 5 = 45π. Ответ: 45.', '45', 2],
+      ['ЕГЭ', 'Профиль · планиметрия', 'Площадь прямоугольного треугольника с катетами 10 и 24 равна...', 'S = (1/2) · a · b = (10 · 24) / 2 = 120.', '120', 1],
+      ['ЕГЭ', 'Профиль · логарифмы', 'Решите уравнение: log₂(x − 1) = 3.', 'По определению логарифма: x − 1 = 2³ = 8, следовательно x = 9.', '9', 2],
+      ['ЕГЭ', 'Профиль · параметры', 'При каком значении a прямая y = ax + 2 проходит через точку (3; 11)?', 'Подставляем x=3, y=11: 11 = 3a + 2 → 3a = 9 → a = 3.', '3', 2],
+      ['ОГЭ', 'Уравнения', 'Решите уравнение: 5x − 7 = 18.', '5x = 25 → x = 5.', '5', 1],
+      ['ОГЭ', 'Геометрия', 'Периметр квадрата равен 28. Найдите его площадь.', 'Сторона a = 28 / 4 = 7. Площадь S = a² = 49.', '49', 1],
+      ['ОГЭ', 'Проценты', 'Число 80 увеличили на 15%. Найдите итоговый результат.', '80 · 1.15 = 92.', '92', 1],
+      ['ОГЭ', 'Вероятность', 'На 10 карточках написаны числа от 1 до 10. Какова вероятность наугад вытянуть чётное число?', 'Чётные числа: 2, 4, 6, 8, 10 (всего 5 чисел). Вероятность 5/10 = 0.5.', '0,5', 1]
+    ]
+  },
+  'Русский язык': {
+    icon: 'А',
+    desc: 'Орфография корней и суффиксов, синтаксис, пунктуация и нормы речи',
+    q: [
+      ['ЕГЭ', 'Задание 9 · корни', 'Укажите слово, в котором пропущена проверяемая безударная гласная корня: заг..реть, прим..рять (друзей), к..саться.', '«Примирять» проверяется словом «мир». В «загореть» чередование -гар-/-гор-, в «касаться» чередование -кас-/-кос-.', 'примирять', 2],
+      ['ЕГЭ', 'Задание 11 · суффиксы', 'Вставьте пропущенные буквы: доверч..вый, ключ..к.', 'Доверчивый: суффикс -чив-. Ключик: суффикс -ик- (гласная не выпадает при склонении).', 'доверчивый, ключик', 2],
+      ['ЕГЭ', 'Задание 15 · пунктуация', 'Расставьте знаки: «Я остановился у дома где прошло моё детство и долго смотрел на окна». Напишите всё предложение.', 'Придаточное «где прошло моё детство» обособляется с двух сторон.', 'Я остановился у дома, где прошло моё детство, и долго смотрел на окна.', 3],
+      ['ЕГЭ', 'Задание 16 · запятые в ССП', 'Расставьте запятые: «Ветер стих и над рекой поднялся туман».', 'Две основы соединены союзом И, общего члена нет -> ставится запятая.', 'Ветер стих, и над рекой поднялся туман.', 2],
+      ['ЕГЭ', 'Задание 21 · пунктуационный анализ', 'Объясните постановку запятой: «Уставший после дороги, он сразу уснул».', 'Обособляется определение, относящееся к личному местоимению «он».', 'Обособленное определение при личном местоимении', 3],
+      ['ЕГЭ', 'Задание 26 · тропы', 'Как называется образное поэтическое определение в выражении «золотая осень»?', 'Художественное образное определение — эпитет.', 'эпитет', 1],
+      ['ОГЭ', 'Орфография приставок', 'Вставьте пропущенную букву: бе..шумный.', 'Перед глухим согласным [ш] пишется приставка бес-.', 'с', 1],
+      ['ОГЭ', 'Пунктуация в СПП', 'Где ставится запятая: «Если будет хорошая погода мы поедем за город»?', 'После слова «погода» перед главной частью.', 'после слова погода', 1],
+      ['ОГЭ', 'Грамматические нормы', 'Исправьте грамматическую ошибку: «Оплатить за проезд».', 'Оплатить (что?) проезд.', 'оплатить проезд', 2]
+    ]
+  },
+  'Информатика': {
+    icon: '⌘',
+    desc: 'Алгоритмы, логические функции, таблицы истинности, сети и Python',
+    q: [
+      ['ЕГЭ', 'Задание 2 · логика', 'При каких значениях переменных A и B логическое выражение (A → B) ∧ A истинно? Ответ запишите в виде A=.., B=..', 'Для конъюнкции A=1. Тогда 1 → B = 1, значит B=1.', 'A=1, B=1', 2],
+      ['ЕГЭ', 'Задание 5 · алгоритмы', 'Автомат: если x чётное — делит на 2, если нечётное — вычитает 1. Сколько шагов нужно числу 12, чтобы получить 1?', '12 → 6 → 3 → 2 → 1. Ровно 4 шага.', '4', 2],
+      ['ЕГЭ', 'Задание 7 · кодирование', 'Алфавит содержит 64 символа. Каков объём сообщения из 120 символов в битах?', '64 = 2⁶, 1 символ = 6 бит. Объём = 120 · 6 = 720 бит.', '720 бит', 2],
+      ['ЕГЭ', 'Задание 8 · комбинаторика', 'Сколько пятибуквенных слов можно составить из букв А, Б, В, если буквы могут повторяться?', '3⁵ = 243.', '243', 2],
+      ['ЕГЭ', 'Задание 13 · сети', 'Сколько IP-адресов содержит IPv4-подсеть с маской /26?', 'Число адресов = 2^(32 − 26) = 2⁶ = 64 адреса.', '64', 2],
+      ['ЕГЭ', 'Задание 15 · циклы', 'Для какого наименьшего целого неотрицательного x цикл while x*x < 100 выполнится 0 раз?', 'Условие x² ≥ 100 выполняется при x=10.', '10', 3],
+      ['ЕГЭ', 'Задание 17 · перебор', 'В файле 1000 целых чисел. Сколько соседних пар элементов будет проверено?', 'В массиве длины N пар ровно N − 1: 999.', '999', 1],
+      ['ОГЭ', 'Системы счисления', 'Переведите число 25 из десятичной системы в двоичную.', '25 = 16 + 8 + 1 = 11001₂.', '11001', 1],
+      ['ОГЭ', 'Таблицы истинности', 'Сколько строк будет в таблице истинности функции от трёх переменных?', '2³ = 8.', '8', 1],
+      ['ОГЭ', 'Простые алгоритмы', 'Команда x := x + 4 выполнена. Исходно x было равно 9. Чему равно новое x?', '9 + 4 = 13.', '13', 1]
+    ]
+  },
+  'Физика': {
+    icon: '⚛',
+    desc: 'Кинематика, динамика, энергия, законы Ома и термодинамика',
+    q: [
+      ['ЕГЭ', 'Задание 1 · кинематика', 'Тело движется со скоростью 12 м/с в течение 5 с. Найдите путь (в метрах).', 'S = v · t = 12 · 5 = 60 м.', '60', 1],
+      ['ЕГЭ', 'Задание 4 · динамика', 'Тело массой 2 кг движется с ускорением 3 м/с². Модуль равнодействующей силы в Ньютонах равен...', 'F = m · a = 2 · 3 = 6 Н.', '6', 1],
+      ['ЕГЭ', 'Задание 8 · энергия', 'Пружину жёсткостью 200 Н/м растянули на 0.1 м. Найдите потенциальную энергию упругой деформации в Дж.', 'E = (k · x²) / 2 = (200 · 0.01) / 2 = 1 Дж.', '1', 2],
+      ['ЕГЭ', 'Задание 10 · импульс', 'Мяч массой 0.2 кг летит со скоростью 15 м/с. Каков модуль импульса в кг·м/с?', 'p = m · v = 0.2 · 15 = 3.', '3', 1],
+      ['ЕГЭ', 'Задание 13 · мощность тока', 'Резистор 6 Ом подключён к напряжению 12 В. Найдите мощность в Ваттах.', 'P = U² / R = 144 / 6 = 24 Вт.', '24', 2],
+      ['ЕГЭ', 'Задание 16 · оптика', 'Оптическая сила линзы равна 4 дптр. Найдите фокусное расстояние в метрах.', 'F = 1 / D = 1 / 4 = 0.25 м.', '0,25', 2],
+      ['ЕГЭ', 'Задание 22 · теплота', 'Количество теплоты (в Дж) для нагревания 0.5 кг воды на 20°C при c=4200?', 'Q = c · m · Δt = 4200 · 0.5 · 20 = 42000 Дж.', '42000', 2],
+      ['ОГЭ', 'Плотность', 'Масса тела 540 г, объём 200 см³. Плотность в г/см³?', 'ρ = 540 / 200 = 2.7 г/см³.', '2,7', 1],
+      ['ОГЭ', 'Закон Ома', 'Сопротивление цепи 8 Ом, сила тока 2 А. Найдите напряжение в Вольтах.', 'U = I · R = 2 · 8 = 16 В.', '16', 1]
+    ]
+  },
+  'Химия': {
+    icon: '⚗',
+    desc: 'Строение атома, степени окисления, гидролиз, растворы и органика',
+    q: [
+      ['ЕГЭ', 'Задание 3 · атом', 'Каков заряд ядра атома серы (в элементарных единицах), если её порядковый номер 16?', 'Заряд ядра равен порядковому номеру: +16.', '+16', 1],
+      ['ЕГЭ', 'Задание 8 · степени окисления', 'Определите степень окисления серы в серной кислоте H₂SO₄.', '2(+1) + x + 4(−2) = 0 → x = +6.', '+6', 2],
+      ['ЕГЭ', 'Задание 14 · гидролиз', 'Какая среда у водного раствора соли Na₂CO₃: кислая, нейтральная или щелочная?', 'Соль сильного основания и слабой кислоты -> щелочная среда.', 'щелочная', 2],
+      ['ЕГЭ', 'Задание 21 · моли', 'Найдите количество вещества (в моль) в 9 г чистой воды H₂O (M=18 г/моль).', 'n = 9 / 18 = 0.5 моль.', '0,5', 1],
+      ['ЕГЭ', 'Задание 26 · выход', 'Теоретически рассчитано 20 г продукта, а получили 15 г. Найдите выход в %.', 'η = (15 / 20) · 100% = 75%.', '75%', 1],
+      ['ЕГЭ', 'Задание 34 · горение', 'Сколько моль CO₂ образуется при сгорании 1 моль пропана C₃H₈?', 'C₃H₈ + 5O₂ → 3CO₂ + 4H₂O. 3 моль CO₂.', '3', 2],
+      ['ОГЭ', 'Молярная масса', 'Найдите молярную массу CO₂ (г/моль). Ar(C)=12, Ar(O)=16.', '12 + 2 · 16 = 44 г/моль.', '44', 1],
+      ['ОГЭ', 'Классы веществ', 'К какому классу веществ относится HCl?', 'Кислота (хлороводородная / соляная).', 'кислота', 1]
+    ]
+  },
+  'Биология': {
+    icon: '🧬',
+    desc: 'Цитология, деление клеток, законы Менделя и биогеоценозы',
+    q: [
+      ['ЕГЭ', 'Задание 4 · органеллы', 'Какая клеточная органелла осуществляет биосинтез белка на матрице иРНК?', 'Трансляция происходит на рибосомах.', 'рибосома', 1],
+      ['ЕГЭ', 'Задание 6 · генетика', 'При скрещивании Aa × Aa какова вероятность (%) рождения потомка с рецессивным фенотипом (aa)?', 'Расщепление 3:1. Рецессивный фенотип aa — 25%.', '25%', 2],
+      ['ЕГЭ', 'Задание 12 · гликолиз', 'Сколько молекул АТФ синтезируется при анаэробном гликолизе одной молекулы глюкозы?', 'Чистый выход составляет 2 АТФ.', '2', 1],
+      ['ЕГЭ', 'Задание 20 · пищевые цепи', 'Трава (10000 кДж) → заяц → лиса. Сколько энергии перейдёт лисе по правилу 10%?', '10000 · 0.1 · 0.1 = 100 кДж.', '100 кДж', 2],
+      ['ЕГЭ', 'Задание 27 · скрещивание', 'Жёлтый горох (A) доминирует над зелёным (a). При скрещивании Aa × aa какова вероятность (%) жёлтых семян?', '50% Aa (жёлтые).', '50%', 2],
+      ['ЕГЭ', 'Задание 28 · хромосомы', 'Может ли признак быть сцеплен с X-хромосомой, если он передаётся строго от отца к сыну?', 'Нет, отец передаёт сыну Y-хромосому.', 'нет', 3],
+      ['ОГЭ', 'Клетки', 'Способ деления соматических клеток с сохранением набора хромосом называется...', 'Митоз.', 'митоз', 1],
+      ['ОГЭ', 'Фотосинтез', 'Какой газ поглощается зелёными растениями для фотосинтеза?', 'Углекислый газ (CO₂).', 'углекислый газ', 1]
+    ]
+  },
+  'История': {
+    icon: '⌛',
+    desc: 'Хронология Руси, реформы императоров, войны и ключевые даты',
+    q: [
+      ['ЕГЭ', 'Задание 1 · хронология', 'Расположите события по времени: Крещение Руси, Ледовое побоище, Куликовская битва. Запишите года через запятую.', '988, 1242, 1380.', '988, 1242, 1380', 2],
+      ['ЕГЭ', 'Задание 4 · даты', 'В каком году произошло восстание декабристов на Сенатской площади?', '14 декабря 1825 года.', '1825', 1],
+      ['ЕГЭ', 'Задание 6 · полководцы', 'Какой новгородский князь одержал победу над шведами в Невской битве 1240 года?', 'Князь Александр Ярославич (Невский).', 'Александр Невский', 1],
+      ['ЕГЭ', 'Задание 10 · ВОВ', 'В каком году победоносно завершилась Сталинградская битва?', '2 февраля 1943 года.', '1943', 1],
+      ['ЕГЭ', 'Задание 19 · реформы', 'Высший государственный орган, созданный Петром I в 1711 году взамен Боярской думы?', 'Правительствующий Сенат.', 'Сенат', 2],
+      ['ЕГЭ', 'Задание 20 · причины', 'Главная причина отмены крепостного права Александром II в 1861 году?', 'Кризис феодально-крепостнической системы и поражение в Крымской войне.', 'кризис крепостнической системы', 3],
+      ['ОГЭ', 'Крещение Руси', 'В каком году князь Владимир Святославич крестил Русь?', '988 год.', '988', 1],
+      ['ОГЭ', 'Пётр I', 'В каком году началось единоличное правление Петра I после кончины царя Ивана V?', '1696 год.', '1696', 2]
+    ]
+  },
+  'География': {
+    icon: '◉',
+    desc: 'Топография, климатология, природные зоны и экономика регионов',
+    q: [
+      ['ЕГЭ', 'Задание 3 · масштабы', 'Масштаб 1:1 000 000. Длина на карте 4 см. Расстояние на местности в километрах?', '1 см = 10 км. 4 · 10 = 40 км.', '40', 1],
+      ['ЕГЭ', 'Задание 8 · климат', 'Почему на западных побережьях Европы выпадает много осадков?', 'Из-за постоянного западного переноса влажных морских воздушных масс Атлантики.', 'западный перенос', 2],
+      ['ЕГЭ', 'Задание 12 · демография', 'Родилось 15 тыс. человек, умерло 11 тыс. Найдите естественный прирост (в тыс. чел.).', '15 − 11 = 4.', '4', 1],
+      ['ЕГЭ', 'Задание 15 · производство', 'Какой фактор является определяющим для размещения заводов по выплавке алюминия?', 'Энергетический фактор (дешёвая энергия ГЭС).', 'энергетический', 2],
+      ['ЕГЭ', 'Задание 18 · реки', 'Самая длинная река Европейской части России, впадающая в Каспийское море?', 'Волга.', 'Волга', 1],
+      ['ЕГЭ', 'Задание 27 · карты', 'На карте масштаба 1:500 000 расстояние равно 6 см. Сколько это километров?', '6 · 5 = 30 км.', '30', 2],
+      ['ОГЭ', 'Океаны', 'Самый крупный по площади и самый глубокий океан на планете?', 'Тихий океан.', 'Тихий океан', 1],
+      ['ОГЭ', 'Зоны', 'Природная зона, где преобладают мхи, лишайники и карликовые берёзы?', 'Тундра.', 'тундра', 1]
+    ]
+  }
+};
+
+// ==========================================
+// 4. СПРАВОЧНИК ФОРМУЛ И ПРАВИЛ
+// ==========================================
+const cheatData = [
+  { subject: 'Математика', title: 'Формулы сокращенного умножения', content: '(a ± b)² = a² ± 2ab + b²\na² − b² = (a − b)(a + b)\n(a ± b)³ = a³ ± 3a²b + 3ab² ± b³' },
+  { subject: 'Математика', title: 'Свойства логарифмов', content: 'logₐ(x · y) = logₐ(x) + logₐ(y)\nlogₐ(x / y) = logₐ(x) − logₐ(y)\nlogₐ(xᵏ) = k · logₐ(x)\na^(logₐ(b)) = b' },
+  { subject: 'Математика', title: 'Производные элементарных функций', content: '(xⁿ)\' = n · xⁿ⁻¹\n(sin x)\' = cos x,  (cos x)\' = −sin x\n(eˣ)\' = eˣ,  (ln x)\' = 1/x' },
+  { subject: 'Русский язык', title: 'Чередующиеся корни (правило «ИРИНА»)', content: '-бер-/-бир-, -дер-/-дир-, -мер-/-мир-, -пер-/-пир-, -тер-/-тир-, -стел-/-стил-.\nЕсли за корнем следует суффикс -А-, в корне пишется буква И!' },
+  { subject: 'Русский язык', title: 'Суффиксы причастий настоящего времени', content: 'От 1-го спряжения глагола: -УЩ- / -ЮЩ-, -ЕМ- / -ОМ-\nОт 2-го спряжения глагола: -АЩ- / -ЯЩ-, -ИМ-' },
+  { subject: 'Информатика', title: 'Таблица степеней двойки', content: '2¹=2, 2²=4, 2³=8, 2⁴=16, 2⁵=32\n2⁶=64, 2⁷=128, 2⁸=256, 2⁹=512, 2¹⁰=1024' },
+  { subject: 'Информатика', title: 'Импликация и законы де Моргана', content: 'A → B  ≡  ¬A ∨ B\n¬(A ∧ B) ≡ ¬A ∨ ¬B\n¬(A ∨ B) ≡ ¬A ∧ ¬B' },
+  { subject: 'Физика', title: 'Законы динамики Ньютона', content: 'I: Тело сохраняет покой или равномерное прямолинейное движение.\nII: F = m · a\nIII: F₁ = −F₂' },
+  { subject: 'Физика', title: 'Электрический ток и закон Ома', content: 'I = U / R\nP = I · U = I² · R = U² / R\nQ = I² · R · t (Джоуль-Ленц)' },
+  { subject: 'Химия', title: 'Расчётные формулы количества вещества', content: 'n = m / M  (масса)\nn = V / Vₘ  где Vₘ = 22.4 л/моль при н.у.\nn = N / Nₐ  где Nₐ = 6.02 · 10²³' },
+  { subject: 'Биология', title: 'Фазы митоза (ПМАТ)', content: '1. Профаза: спирализация хромосом, растворение ядерной оболочки.\n2. Метафаза: хромосомы на экваторе клетки.\n3. Анафаза: расхождение хроматид к полюсам.\n4. Телофаза: формирование ядер, деление цитоплазмы.' },
+  { subject: 'История', title: 'Главные сражения Руси и России', content: '1240 — Невская битва\n1242 — Ледовое побоище\n1380 — Куликовская битва\n1709 — Полтавская битва\n1812 — Бородинское сражение\n1942–1943 — Сталинград' },
+  { subject: 'География', title: 'Крайние точки России', content: 'Северная (материк): мыс Челюскин\nЮжная: гора Базардюзю (Дагестан)\nЗападная: Балтийская коса (Калининград)\nВосточная (материк): мыс Дежнёва' }
+];
+
+// ==========================================
+// 5. СИСТЕМА ДОСТИЖЕНИЙ
+// ==========================================
+const achievementsList = [
+  { id: 'first_task', title: 'Первый рубеж', desc: 'Отметить решённой хотя бы 1 задачу', icon: '🎯', check: db => Object.values(db.done).some(Boolean) },
+  { id: 'solve_10', title: 'Набирая темп', desc: 'Решить 10 заданий из банка', icon: '⚡', check: db => Object.values(db.done).filter(Boolean).length >= 10 },
+  { id: 'solve_25', title: 'Марафонец КИМ', desc: 'Освоить 25 заданий из программы', icon: '🏅', check: db => Object.values(db.done).filter(Boolean).length >= 25 },
+  { id: 'exam_done', title: 'Экзаменуемый', desc: 'Пройти хотя бы один тест без подсказок', icon: '🎓', check: db => db.stats.tests >= 1 },
+  { id: 'exam_best', title: 'Блестящий результат', desc: 'Сдать экзаменационный тест на 80%+', icon: '💎', check: db => db.stats.best >= 80 },
+  { id: 'pomo_master', title: 'Мастер концентрации', desc: 'Завершить 2 помодоро-сессии учёбы', icon: '⏱', check: db => (db.stats.pomoCount || 0) >= 2 },
+  { id: 'note_writer', title: 'Собственная летопись', desc: 'Сохранить 3 учебные заметки', icon: '✍️', check: db => db.notes.length >= 3 },
+  { id: 'xp_100', title: 'Ученик Высшей Лиги', desc: 'Набрать суммарно 100+ очков опыта XP', icon: '👑', check: db => db.stats.xp >= 100 }
+];
+
+// ==========================================
+// 6. ХРАНИЛИЩЕ И СОСТОЯНИЕ
+// ==========================================
+let db = JSON.parse(localStorage.getItem('studyhub_ultra_db') || '{}');
+db.tasks = db.tasks || [];
+db.notes = db.notes || [];
+db.done = db.done || {};
+db.saved = db.saved || [];
+db.stats = db.stats || { xp: 0, tests: 0, best: 0, pomoCount: 0 };
+db.unlockedBadges = db.unlockedBadges || [];
+
+let testState = null;
+let testInterval = null;
+
+// Помодоро состояние
+let pomoSeconds = 25 * 60;
+let pomoInterval = null;
+let pomoIsRunning = false;
+
+// Флеш-карточки индекс
+let currentFlashcardIdx = 0;
+
+const $ = id => document.getElementById(id);
+const today = () => new Date().toISOString().slice(0, 10);
+const esc = s => String(s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+function persist() {
+  localStorage.setItem('studyhub_ultra_db', JSON.stringify(db));
+  checkAchievements();
+  updateStatsCounters();
+}
+
+function toast(msg) {
+  const t = $('toast');
+  t.innerHTML = `<span>⚡</span> ${esc(msg)}`;
+  t.classList.add('show');
+  playSound('click');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+function checkAchievements() {
+  achievementsList.forEach(a => {
+    if (!db.unlockedBadges.includes(a.id) && a.check(db)) {
+      db.unlockedBadges.push(a.id);
+      toast(`🏆 Открыто достижение: «${a.title}»! +20 XP`);
+      db.stats.xp += 20;
+      playSound('success');
+    }
+  });
+}
+
+function bank(subject = 'all', exam = 'all') {
+  let list = [];
+  Object.entries(raw).forEach(([sName, sData]) => {
+    if (subject !== 'all' && subject !== sName) return;
+    sData.q.forEach((q, idx) => {
+      if (exam !== 'all' && q[0] !== exam) return;
+      list.push({
+        id: `${sName}-${idx}`,
+        subject: sName,
+        exam: q[0],
+        topic: q[1],
+        text: q[2],
+        solution: q[3],
+        answer: q[4],
+        level: q[5]
+      });
+    });
+  });
+  return list;
+}
+
+function updateStatsCounters() {
+  const all = bank();
+  const finished = all.filter(q => db.done[q.id]).length;
+  const pct = all.length ? Math.round((finished / all.length) * 100) : 0;
+  const level = Math.floor(db.stats.xp / 50) + 1;
+  
+  if ($('sidebarPct')) $('sidebarPct').textContent = `${pct}%`;
+  if ($('sidebarBar')) $('sidebarBar').style.width = `${pct}%`;
+  if ($('sidebarXp')) $('sidebarXp').textContent = db.stats.xp;
+  if ($('userLevelBadge')) $('userLevelBadge').textContent = level;
+  if ($('homeProgressBar')) $('homeProgressBar').style.width = `${pct}%`;
+  if ($('homeProgressLabel')) $('homeProgressLabel').textContent = `${finished} из ${all.length} задач изучено`;
+  if ($('homeProgressPct')) $('homeProgressPct').textContent = `${pct}%`;
+  if ($('pomoSessionCount')) $('pomoSessionCount').textContent = db.stats.pomoCount || 0;
+}
+
+// ==========================================
+// 7. НАВИГАЦИЯ
+// ==========================================
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.toggle('active', p.id === pageId));
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.toggle('active', b.dataset.page === pageId));
+  
+  if (pageId === 'home') { renderHome(); loadDailyBlitz(); }
+  if (pageId === 'bank') renderBank();
+  if (pageId === 'planner') renderTasks();
+  if (pageId === 'notes') renderNotes();
+  if (pageId === 'exam') renderExamPage();
+  if (pageId === 'cheatsheet') renderCheatSheet();
+  if (pageId === 'achievements') renderAchievements();
+  if (pageId === 'calculator') updateCalculatorUI();
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  $('sidebar').classList.remove('open');
+  $('sidebarBackdrop').classList.remove('open');
+}
+
+// ==========================================
+// 8. ГЛАВНАЯ СТРАНИЦА И БЛИЦ
+// ==========================================
+let currentBlitzQuestion = null;
+
+function loadDailyBlitz() {
+  const all = bank();
+  currentBlitzQuestion = all[Math.floor(Math.random() * all.length)];
+  $('blitzQuestion').innerHTML = `<span class="tag tag-p" style="margin-right:8px;">${currentBlitzQuestion.subject}</span> ${esc(currentBlitzQuestion.text)}`;
+  $('blitzInput').value = '';
+  $('blitzResultMsg').textContent = '';
+}
+
+function renderHome() {
+  const all = bank();
+  const finished = all.filter(q => db.done[q.id]).length;
+
+  $('statsGrid').innerHTML = [
+    ['📚', 'Заданий в базе', all.length, 'По 8 предметам'],
+    ['✓', 'Решено задач', finished, `${Math.round((finished/all.length)*100 || 0)}% программы`],
+    ['⚡', 'Опыт подготовки', `${db.stats.xp} XP`, `Уровень ${Math.floor(db.stats.xp/50)+1}`],
+    ['🏆', 'Ачивок получено', `${db.unlockedBadges.length} из ${achievementsList.length}`, 'Твои трофеи']
+  ].map(s => `
+    <div class="stat-card">
+      <div class="stat-icon-box">${s[0]}</div>
+      <div class="stat-meta">
+        <small>${s[1]}</small>
+        <strong>${s[2]}</strong>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">${s[3]}</div>
+      </div>
+    </div>
+  `).join('');
+
+  $('subjectCards').innerHTML = Object.entries(raw).map(([subj, data]) => {
+    const egeCount = data.q.filter(q => q[0] === 'ЕГЭ').length;
+    const ogeCount = data.q.filter(q => q[0] === 'ОГЭ').length;
+    const svgImg = subjectIllustrations[subj] || '';
+
+    return `
+      <div class="subject-card" data-subject="${esc(subj)}">
+        <div class="subject-card-img">
+          ${svgImg}
+        </div>
+        <div class="subject-card-body">
+          <div class="subject-card-title">
+            <span>${esc(subj)}</span>
+            <span style="font-size:18px;">${data.icon}</span>
+          </div>
+          <p class="subject-card-desc">${esc(data.desc)}</p>
+          <div class="subject-card-footer">
+            <span>${egeCount} ЕГЭ · ${ogeCount} ОГЭ</span>
+            <span>Тренироваться →</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  document.querySelectorAll('.subject-card').forEach(el => {
+    el.onclick = () => {
+      const s = el.dataset.subject;
+      $('bankSubject').value = s;
+      showPage('bank');
+    };
+  });
+
+  updateStatsCounters();
+}
+
+// ==========================================
+// 9. БАНК ЗАДАНИЙ
+// ==========================================
+function renderBank() {
+  const subj = $('bankSubject').value || 'all';
+  const ex = $('bankExam').value;
+  const lev = $('bankLevel').value;
+  const filter = $('bankFilter').value;
+  const query = $('bankSearch').value.toLowerCase().trim();
+
+  const bannerBox = $('bankSubjectBanner');
+  if (subj !== 'all' && subjectIllustrations[subj]) {
+    bannerBox.style.display = 'block';
+    bannerBox.innerHTML = subjectIllustrations[subj];
+  } else {
+    bannerBox.style.display = 'none';
+    bannerBox.innerHTML = '';
+  }
+
+  const allSubjQuestions = bank(subj, ex);
+  const filtered = allSubjQuestions.filter(q => {
+    if (lev !== 'all' && q.level != lev) return false;
+    if (filter === 'new' && db.done[q.id]) return false;
+    if (filter === 'done' && !db.done[q.id]) return false;
+    if (filter === 'saved' && !db.saved.includes(q.id)) return false;
+    if (query) {
+      const combo = `${q.topic} ${q.text} ${q.subject} ${q.exam}`.toLowerCase();
+      if (!combo.includes(query)) return false;
+    }
+    return true;
+  });
+
+  $('bankCount').textContent = `Найдено ${filtered.length} из ${allSubjQuestions.length} заданий`;
+
+  if (!filtered.length) {
+    $('bankList').innerHTML = `
+      <div class="empty-box">
+        <span>🔍</span>
+        <h4 style="font-size:17px; margin-bottom:4px;">Ничего не найдено</h4>
+        <p>Попробуйте сбросить поисковый запрос или фильтры сложности.</p>
+      </div>
+    `;
+    return;
+  }
+
+  $('bankList').innerHTML = filtered.map(q => {
+    const isDone = !!db.done[q.id];
+    const isSaved = db.saved.includes(q.id);
+    const levelName = ['', 'Базовый', 'Средний', 'Повышенный'][q.level] || 'Стандарт';
+    const levelClass = `tag-level-${q.level}`;
+
+    return `
+      <article class="question-item">
+        <div class="question-header">
+          <div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+            <span class="tag tag-p">${esc(q.subject)}</span>
+            <span class="tag" style="font-weight:700; color:var(--text);">${q.exam}</span>
+            <span class="tag">${esc(q.topic)}</span>
+            <span class="tag ${levelClass}">${levelName}</span>
+          </div>
+          <button class="btn-outline btn-bookmark" data-id="${q.id}" style="padding:6px 12px; font-size:12.5px;">
+            ${isSaved ? '★ В закладках' : '☆ В закладки'}
+          </button>
+        </div>
+
+        <div class="question-body">${esc(q.text)}</div>
+
+        <div class="question-footer">
+          <div style="display:flex; gap:8px;">
+            <button class="btn-secondary btn-reveal" data-id="${q.id}">💡 Показать разбор</button>
+            <button class="btn-outline btn-solve" data-id="${q.id}">
+              ${isDone ? '✓ Решено' : '○ Отметить решённым'}
+            </button>
+          </div>
+        </div>
+
+        <div class="solution-panel" id="sol-${q.id}">
+          <div style="margin-bottom:8px;"><strong>Пошаговый разбор:</strong> ${esc(q.solution)}</div>
+          <div><strong>Правильный ответ:</strong> <span style="background:var(--p-light); color:var(--p); padding:2px 8px; border-radius:6px; font-family:var(--font-mono); font-weight:700;">${esc(q.answer)}</span></div>
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  document.querySelectorAll('.btn-reveal').forEach(b => {
+    b.onclick = () => {
+      const panel = $(`sol-${b.dataset.id}`);
+      panel.classList.toggle('open');
+      b.textContent = panel.classList.contains('open') ? 'Скрыть разбор' : '💡 Показать разбор';
+      playSound('click');
+    };
+  });
+
+  document.querySelectorAll('.btn-bookmark').forEach(b => {
+    b.onclick = () => {
+      const id = b.dataset.id;
+      if (db.saved.includes(id)) {
+        db.saved = db.saved.filter(x => x !== id);
+        toast('Удалено из закладок');
+      } else {
+        db.saved.push(id);
+        toast('Добавлено в закладки ★');
+      }
+      persist();
+      renderBank();
+    };
+  });
+
+  document.querySelectorAll('.btn-solve').forEach(b => {
+    b.onclick = () => {
+      const id = b.dataset.id;
+      db.done[id] = !db.done[id];
+      if (db.done[id]) {
+        db.stats.xp += 3;
+        playSound('success');
+        toast('+3 XP! Задание отмечено выполненным');
+      }
+      persist();
+      renderBank();
+    };
+  });
+}
+
+// ==========================================
+// 10. ТРЕНАЖЁР ЭКЗАМЕНА
+// ==========================================
+function renderExamPage() {
+  const subj = $('examSubject').value;
+  const banner = $('examSubjectBanner');
+  if (subjectIllustrations[subj]) {
+    banner.style.display = 'block';
+    banner.innerHTML = subjectIllustrations[subj];
+  } else {
+    banner.style.display = 'none';
+  }
+}
+
+function startExam() {
+  if (testInterval) clearInterval(testInterval);
+  
+  const subj = $('examSubject').value;
+  const exType = $('examType').value;
+  const count = +$('examCount').value;
+  const seconds = +$('examTimer').value;
+  
+  const candidates = bank(subj, exType).sort(() => Math.random() - 0.5).slice(0, count);
+  if (!candidates.length) {
+    return toast('Нет заданий по выбранным фильтрам');
+  }
+
+  testState = {
+    list: candidates,
+    answers: Array(candidates.length).fill(''),
+    secondsLeft: seconds,
+    totalSeconds: seconds,
+    subject: subj
+  };
+
+  $('examResult').innerHTML = '';
+  $('startExam').textContent = '🔄 Перезапустить';
+  $('submitExam').style.display = 'inline-flex';
+
+  $('examWork').innerHTML = `
+    <div style="margin-bottom:16px; font-weight:700; font-size:15px; color:var(--p);">
+      📝 Тест сформирован (${candidates.length} заданий). Впишите свои ответы в поля:
+    </div>
+    ${candidates.map((q, idx) => `
+      <div class="exam-question-card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span class="tag tag-p">Вопрос ${idx + 1} из ${candidates.length}</span>
+          <span class="tag">${q.exam} · ${esc(q.topic)}</span>
+        </div>
+        <h3>${esc(q.text)}</h3>
+        <label style="font-size:13px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:6px;">
+          Ваш ответ (число или фраза):
+        </label>
+        <input class="exam-input" id="exInp-${idx}" placeholder="Введите ответ..." data-index="${idx}" autocomplete="off">
+      </div>
+    `).join('')}
+    <div style="text-align:center; padding:20px 0;">
+      <button class="btn-primary" id="bottomSubmitBtn" style="padding:14px 32px; font-size:16px;">
+        🏁 Завершить тест и проверить ответы
+      </button>
+    </div>
+  `;
+
+  document.querySelectorAll('.exam-input').forEach(inp => {
+    inp.oninput = () => {
+      testState.answers[+inp.dataset.index] = inp.value;
+    };
+  });
+
+  $('bottomSubmitBtn').onclick = () => finishExam(false);
+
+  updateExamTimerUI();
+  if (testState.secondsLeft > 0) {
+    testInterval = setInterval(() => {
+      testState.secondsLeft--;
+      updateExamTimerUI();
+      if (testState.secondsLeft <= 0) {
+        playSound('gong');
+        finishExam(true);
+      }
+    }, 1000);
+  }
+
+  $('examWork').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function updateExamTimerUI() {
+  if (!testState) return;
+  const statusEl = $('examTimerStatus');
+  if (testState.totalSeconds > 0) {
+    const mins = Math.floor(testState.secondsLeft / 60);
+    const secs = String(testState.secondsLeft % 60).padStart(2, '0');
+    statusEl.innerHTML = `
+      <span>Тест идёт · Предмет: <strong>${esc(testState.subject)}</strong></span>
+      <span class="timer-chip">⏱ Осталось: ${mins}:${secs}</span>
+    `;
+  } else {
+    statusEl.innerHTML = `
+      <span>Тест идёт · Предмет: <strong>${esc(testState.subject)}</strong></span>
+      <span class="tag tag-p">Свободный темп</span>
+    `;
+  }
+}
+
+function norm(s) {
+  return String(s || '').toLowerCase().trim().replace(/[ё]/g, 'е').replace(/\s+/g, '').replace(/[.,;:!?()[\]{}]/g, '');
+}
+
+function finishExam(isTimeout = false) {
+  if (!testState) return;
+  if (testInterval) clearInterval(testInterval);
+
+  const list = testState.list;
+  const answers = testState.answers;
+  const evaluated = list.map((q, i) => {
+    const userAns = answers[i];
+    const isOk = norm(userAns) === norm(q.answer);
+    return { q, userAns, isOk };
+  });
+
+  const correctCount = evaluated.filter(e => e.isOk).length;
+  const pct = Math.round((correctCount / list.length) * 100);
+  const earnedXp = correctCount * 5;
+
+  db.stats.tests++;
+  db.stats.best = Math.max(db.stats.best, pct);
+  db.stats.xp += earnedXp;
+  persist();
+
+  if (pct >= 80) playSound('success');
+  else playSound('click');
+
+  $('submitExam').style.display = 'none';
+  $('examTimerStatus').innerHTML = `
+    <span style="color:var(--text); font-weight:700;">
+      ${isTimeout ? '⏰ Время вышло! Результаты сформированы.' : '✅ Тестирование завершено!'}
+    </span>
+  `;
+
+  $('examResult').innerHTML = `
+    <div class="result-header-card">
+      <div style="font-size:13px; text-transform:uppercase; letter-spacing:1px; opacity:0.9;">Итоговый результат</div>
+      <div class="result-score-num">${correctCount} / ${list.length}</div>
+      <div style="font-size:19px; font-weight:700; margin-bottom:8px;">${pct}% верных ответов</div>
+      <div>Начислено: <strong>+${earnedXp} XP</strong> в копилку прогресса</div>
+    </div>
+
+    <h3 style="font-size:18px; font-weight:800; margin:24px 0 14px;">Разбор выполненных заданий</h3>
+    ${evaluated.map((r, i) => `
+      <div class="result-item-card ${r.isOk ? 'correct' : 'incorrect'}">
+        <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:6px;">
+          <span>Вопрос ${i + 1}: ${r.isOk ? '✅ Верно' : '❌ Ошибка'}</span>
+          <span class="tag">${r.q.exam}</span>
+        </div>
+        <p style="margin-bottom:8px;">${esc(r.q.text)}</p>
+        <div style="font-size:13.5px; margin-bottom:4px;">
+          Ваш ответ: <strong>${esc(r.userAns || '— (не введён)')}</strong>
+        </div>
+        <div style="font-size:13.5px; color:var(--p); margin-bottom:6px;">
+          Правильный ответ: <strong>${esc(r.q.answer)}</strong>
+        </div>
+        <div style="font-size:13.5px; color:var(--text-muted); padding-top:6px; border-top:1px dashed var(--border);">
+          <strong>Объяснение:</strong> ${esc(r.q.solution)}
+        </div>
+      </div>
+    `).join('')}
+  `;
+
+  testState = null;
+  $('examResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ==========================================
+// 11. СПРАВОЧНИК ФОРМУЛ И ФЛЕШ-КАРТОЧКИ
+// ==========================================
+function renderCheatSheet() {
+  const filter = $('cheatSubjectFilter').value;
+  const q = $('cheatSearchInput').value.toLowerCase().trim();
+
+  const filtered = cheatData.filter(item => {
+    if (filter !== 'all' && item.subject !== filter) return false;
+    if (q && !`${item.title} ${item.content} ${item.subject}`.toLowerCase().includes(q)) return false;
+    return true;
+  });
+
+  if (!filtered.length) {
+    $('cheatSheetContainer').innerHTML = `
+      <div class="empty-box" style="grid-column: 1/-1;">
+        <span>📖</span>
+        <h4>В справочнике ничего не найдено</h4>
+        <p>Попробуйте выбрать другой предмет или изменить поисковый запрос.</p>
+      </div>
+    `;
+    return;
+  }
+
+  $('cheatSheetContainer').innerHTML = filtered.map(item => `
+    <div class="cheat-card">
+      <span class="tag tag-p" style="margin-bottom:8px;">${esc(item.subject)}</span>
+      <div class="cheat-title">${esc(item.title)}</div>
+      <div class="cheat-formula-box">${esc(item.content)}</div>
+    </div>
+  `).join('');
+}
+
+function updateFlashcardUI() {
+  const card = cheatData[currentFlashcardIdx % cheatData.length];
+  $('fcSubject').textContent = card.subject;
+  $('fcQuestion').textContent = card.title;
+  $('fcAnswer').textContent = card.content;
+  $('fcAnswer').classList.remove('revealed');
+}
+
+// ==========================================
+// 12. КАЛЬКУЛЯТОР БАЛЛОВ (НОВАЯ ФУНКЦИЯ 1)
+// ==========================================
+const maxPrimaryScores = {
+  ege: { math: 32, rus: 50, inf: 29, phys: 45, chem: 56, bio: 57, hist: 42, geo: 31 },
+  oge: { math: 31, rus: 33, inf: 19, phys: 45, chem: 40, bio: 48, hist: 37, geo: 31 }
+};
+
+function updateCalculatorUI() {
+  const examType = $('calcExamType').value;
+  const subj = $('calcSubject').value;
+  const maxPrimary = maxPrimaryScores[examType][subj] || 32;
+
+  $('calcScoreRange').max = maxPrimary;
+  if (+$('calcScoreRange').value > maxPrimary) {
+    $('calcScoreRange').value = Math.round(maxPrimary * 0.6);
+  }
+
+  const primary = +$('calcScoreRange').value;
+  $('calcPrimaryLabel').textContent = `${primary} из ${maxPrimary}`;
+
+  if (examType === 'ege') {
+    // Расчёт тестового балла из 100
+    const ratio = primary / maxPrimary;
+    let testScore = Math.round(ratio * 100);
+    // Сглаживание по порогу
+    if (primary > 0 && testScore < 27) testScore = Math.max(testScore, 20);
+
+    $('calcResultNumber').textContent = testScore;
+    $('calcScoreSubtitle').textContent = 'Тестовый балл ЕГЭ (из 100)';
+    $('calcProgressFill').style.width = `${testScore}%`;
+
+    let badge = 'Базовый уровень';
+    let comment = 'Необходимо продолжать нарешивать первую часть КИМ.';
+    if (testScore >= 80) {
+      badge = '🔥 Высокобалльник (Бюджет ТОП-ВУЗов)';
+      comment = 'Отличная подготовка! Высокие шансы на поступление в МГУ, МФТИ, ВШЭ, СПбГУ.';
+    } else if (testScore >= 65) {
+      badge = '✅ Уверенный результат';
+      comment = 'Хороший уровень для поступления на бюджет во многие вузы страны.';
+    } else if (testScore >= 40) {
+      badge = '⚠️ Порог преодолён';
+      comment = 'Минимальный балл получен, но стоит подтянуть сложные темы части 2.';
+    }
+    $('calcVerdictBadge').textContent = badge;
+    $('calcComment').textContent = comment;
+  } else {
+    // ОГЭ: шкала оценок 2, 3, 4, 5
+    const ratio = primary / maxPrimary;
+    let grade = 2;
+    let badge = 'Оценка 2 (Не сдал)';
+    let comment = 'Необходима срочная ликвидация пробелов.';
+
+    if (ratio >= 0.75) {
+      grade = 5;
+      badge = 'Оценка «5» (Отлично)';
+      comment = 'Великолепное освоение программы основной школы!';
+    } else if (ratio >= 0.5) {
+      grade = 4;
+      badge = 'Оценка «4» (Хорошо)';
+      comment = 'Уверенные знания, большинство заданий решено правильно.';
+    } else if (ratio >= 0.28) {
+      grade = 3;
+      badge = 'Оценка «3» (Удовлетворительно)';
+      comment = 'Минимальный порог сдачи ОГЭ пройден.';
+    }
+
+    $('calcResultNumber').textContent = grade;
+    $('calcScoreSubtitle').textContent = 'Итоговая отметка ОГЭ (от 2 до 5)';
+    $('calcProgressFill').style.width = `${Math.round(ratio * 100)}%`;
+    $('calcVerdictBadge').textContent = badge;
+    $('calcComment').textContent = comment;
+  }
+}
+
+// ==========================================
+// 13. ПОМОДОРО-ТАЙМЕР
+// ==========================================
+function updatePomoDisplay() {
+  const mins = Math.floor(pomoSeconds / 60);
+  const secs = String(pomoSeconds % 60).padStart(2, '0');
+  $('pomoTimerDisplay').textContent = `${mins}:${secs}`;
+}
+
+function startPomo() {
+  if (pomoInterval) clearInterval(pomoInterval);
+  pomoIsRunning = true;
+  $('pomoToggleBtn').textContent = '⏸ Пауза';
+  pomoInterval = setInterval(() => {
+    pomoSeconds--;
+    updatePomoDisplay();
+    if (pomoSeconds <= 0) {
+      clearInterval(pomoInterval);
+      pomoIsRunning = false;
+      $('pomoToggleBtn').textContent = '▶ Запустить';
+      playSound('gong');
+      db.stats.pomoCount = (db.stats.pomoCount || 0) + 1;
+      db.stats.xp += 15;
+      persist();
+      toast('Сессия завершена! Сделайте перерыв. +15 XP');
+    }
+  }, 1000);
+}
+
+function pausePomo() {
+  if (pomoInterval) clearInterval(pomoInterval);
+  pomoIsRunning = false;
+  $('pomoToggleBtn').textContent = '▶ Продолжить';
+}
+
+// ==========================================
+// 14. ЧЕРНОВИК (CANVAS SCRATCHPAD)
+// ==========================================
+let canvas, ctxDraw, isDrawing = false;
+
+function initCanvas() {
+  canvas = $('scratchCanvas');
+  ctxDraw = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = canvas.parentElement.clientWidth;
+    canvas.height = canvas.parentElement.clientHeight - 60;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  setTimeout(resizeCanvas, 100);
+
+  function start(e) {
+    isDrawing = true;
+    ctxDraw.beginPath();
+    const rect = canvas.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    ctxDraw.moveTo(clientX - rect.left, clientY - rect.top);
+  }
+
+  function draw(e) {
+    if (!isDrawing) return;
+    const rect = canvas.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    ctxDraw.lineTo(clientX - rect.left, clientY - rect.top);
+    ctxDraw.strokeStyle = $('scratchColor').value;
+    ctxDraw.lineWidth = 3;
+    ctxDraw.lineCap = 'round';
+    ctxDraw.stroke();
+  }
+
+  function stop() { isDrawing = false; }
+
+  canvas.addEventListener('mousedown', start);
+  canvas.addEventListener('mousemove', draw);
+  window.addEventListener('mouseup', stop);
+
+  canvas.addEventListener('touchstart', start, { passive: true });
+  canvas.addEventListener('touchmove', draw, { passive: true });
+  canvas.addEventListener('touchend', stop);
+
+  $('clearScratchBtn').onclick = () => {
+    ctxDraw.clearRect(0, 0, canvas.width, canvas.height);
+  };
+}
+
+// ==========================================
+// 15. ДОСТИЖЕНИЯ
+// ==========================================
+function renderAchievements() {
+  $('achievementsGrid').innerHTML = achievementsList.map(a => {
+    const isUnlocked = db.unlockedBadges.includes(a.id);
+    return `
+      <div class="achieve-card ${isUnlocked ? 'unlocked' : 'locked'}">
+        <div class="achieve-badge">${a.icon}</div>
+        <div>
+          <div style="font-weight:800; font-size:15px; margin-bottom:2px;">
+            ${esc(a.title)} ${isUnlocked ? '✓' : '🔒'}
+          </div>
+          <div style="font-size:13px; color:var(--text-muted);">${esc(a.desc)}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ==========================================
+// 16. ПЛАНИРОВЩИК И ЗАМЕТКИ
+// ==========================================
+function renderTasks() {
+  const filter = $('taskFilter').value;
+  const now = today();
+  
+  let list = db.tasks.filter(t => {
+    if (filter === 'active' && t.done) return false;
+    if (filter === 'done' && !t.done) return false;
+    if (filter === 'overdue' && (t.done || !t.date || t.date >= now)) return false;
+    return true;
+  });
+
+  list.sort((a, b) => (a.date || '9999').localeCompare(b.date || '9999'));
+
+  if (!list.length) {
+    $('taskList').innerHTML = `
+      <div class="empty-box" style="margin-top:16px;">
+        <span>📝</span>
+        <h4>Список задач пуст</h4>
+        <p>Добавьте новые учебные цели в список.</p>
+      </div>
+    `;
+    return;
+  }
+
+  $('taskList').innerHTML = list.map(t => {
+    const isOverdue = !t.done && t.date && t.date < now;
+    return `
+      <div class="task-row ${isOverdue ? 'overdue' : ''} ${t.done ? 'done' : ''}">
+        <input type="checkbox" class="task-check" data-id="${t.id}" ${t.done ? 'checked' : ''}>
+        <div class="task-content">
+          <div class="task-title">${esc(t.title)}</div>
+          <div class="task-sub">
+            <span class="tag tag-p" style="font-size:11px;">${esc(t.subject)}</span>
+            ${t.date ? `<span>📅 Срок: ${t.date} ${isOverdue ? '⚠️ Просрочено' : ''}</span>` : ''}
+          </div>
+          ${t.desc ? `<div style="font-size:13px; color:var(--text-muted); margin-top:4px;">${esc(t.desc)}</div>` : ''}
+        </div>
+        <button class="btn-danger btn-task-del" data-id="${t.id}" style="padding:6px 12px; font-size:12px;">Удалить</button>
+      </div>
+    `;
+  }).join('');
+
+  document.querySelectorAll('.task-check').forEach(ck => {
+    ck.onchange = () => {
+      const item = db.tasks.find(x => x.id == ck.dataset.id);
+      if (item) {
+        item.done = ck.checked;
+        if (item.done) {
+          playSound('success');
+          toast('Отлично! Задача закрыта');
+        }
+        persist();
+        renderTasks();
+      }
+    };
+  });
+
+  document.querySelectorAll('.btn-task-del').forEach(b => {
+    b.onclick = () => {
+      db.tasks = db.tasks.filter(x => x.id != b.dataset.id);
+      persist();
+      renderTasks();
+      toast('Задача удалена');
+    };
+  });
+}
+
+function renderNotes() {
+  if (!db.notes.length) {
+    $('notesList').innerHTML = `
+      <div class="empty-box" style="grid-column: 1/-1;">
+        <span>💡</span>
+        <h4>Пока нет сохранённых заметок</h4>
+        <p>Записывайте важные правила и выводы здесь.</p>
+      </div>
+    `;
+    return;
+  }
+
+  $('notesList').innerHTML = db.notes.map((n, idx) => `
+    <div class="note-item">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="tag tag-p">${esc(n.subject)}</span>
+        <button class="btn-danger btn-note-del" data-idx="${idx}" style="padding:4px 8px; font-size:11px;">Удалить</button>
+      </div>
+      <div class="note-title">${esc(n.title)}</div>
+      <div class="note-body">${esc(n.text)}</div>
+    </div>
+  `).join('');
+
+  document.querySelectorAll('.btn-note-del').forEach(b => {
+    b.onclick = () => {
+      db.notes.splice(+b.dataset.idx, 1);
+      persist();
+      renderNotes();
+      toast('Заметка удалена');
+    };
+  });
+}
+
+// ==========================================
+// 17. ИНИЦИАЛИЗАЦИЯ
+// ==========================================
+function init() {
+  const subjects = Object.keys(raw);
+
+  $('bankSubject').innerHTML = `<option value="all">Все 8 предметов</option>` + 
+    subjects.map(s => `<option value="${esc(s)}">${esc(s)}</option>`).join('');
+
+  ['examSubject', 'taskSubject', 'noteSubject'].forEach(id => {
+    $(id).innerHTML = subjects.map(s => `<option value="${esc(s)}">${esc(s)}</option>`).join('');
+  });
+
+  document.querySelectorAll('[data-page]').forEach(el => {
+    el.onclick = () => {
+      playSound('click');
+      showPage(el.dataset.page);
+    };
+  });
+
+  // Мобильное меню
+  $('mobileToggle').onclick = () => {
+    $('sidebar').classList.add('open');
+    $('sidebarBackdrop').classList.add('open');
+  };
+  $('sidebarBackdrop').onclick = () => {
+    $('sidebar').classList.remove('open');
+    $('sidebarBackdrop').classList.remove('open');
+  };
+
+  // Черновик (Scratchpad)
+  initCanvas();
+  $('openScratchpad').onclick = () => {
+    $('scratchModal').classList.add('open');
+    playSound('click');
+  };
+  $('closeScratchBtn').onclick = () => {
+    $('scratchModal').classList.remove('open');
+  };
+
+  // Блиц дня
+  $('nextBlitzBtn').onclick = () => {
+    playSound('click');
+    loadDailyBlitz();
+  };
+  $('blitzCheckBtn').onclick = () => {
+    if (!currentBlitzQuestion) return;
+    const user = $('blitzInput').value;
+    if (!user.trim()) return;
+    const ok = norm(user) === norm(currentBlitzQuestion.answer);
+    if (ok) {
+      playSound('success');
+      $('blitzResultMsg').innerHTML = `<span style="color:var(--success);">✅ Точно в цель! (+10 XP)</span>`;
+      db.stats.xp += 10;
+      persist();
+    } else {
+      $('blitzResultMsg').innerHTML = `<span style="color:var(--danger);">❌ Ответ: ${esc(currentBlitzQuestion.answer)}</span>`;
+    }
+  };
+
+  // Фильтры банка
+  $('bankSubject').onchange = renderBank;
+  $('bankExam').onchange = renderBank;
+  $('bankLevel').onchange = renderBank;
+  $('bankFilter').onchange = renderBank;
+  $('bankSearch').oninput = renderBank;
+  $('surprise').onclick = () => {
+    const list = bank($('bankSubject').value, $('bankExam').value);
+    if (!list.length) return toast('Нет доступных заданий');
+    const pick = list[Math.floor(Math.random() * list.length)];
+    $('bankSearch').value = pick.topic;
+    renderBank();
+  };
+
+  // Экзамен
+  $('examSubject').onchange = renderExamPage;
+  $('startExam').onclick = startExam;
+  $('submitExam').onclick = () => finishExam(false);
+
+  // Справочник и флеш-карты
+  $('cheatSubjectFilter').onchange = renderCheatSheet;
+  $('cheatSearchInput').oninput = renderCheatSheet;
+
+  $('toggleFlashcardsBtn').onclick = () => {
+    const sec = $('flashcardSection');
+    const isHidden = sec.style.display === 'none';
+    sec.style.display = isHidden ? 'block' : 'none';
+    $('toggleFlashcardsBtn').textContent = isHidden ? '📖 Список формул' : '🎴 Режим флеш-карт';
+    if (isHidden) updateFlashcardUI();
+  };
+
+  $('activeFlashcard').onclick = () => {
+    $('fcAnswer').classList.toggle('revealed');
+    playSound('click');
+  };
+  $('fcNextBtn').onclick = () => {
+    currentFlashcardIdx = (currentFlashcardIdx + 1) % cheatData.length;
+    updateFlashcardUI();
+    playSound('click');
+  };
+  $('fcPrevBtn').onclick = () => {
+    currentFlashcardIdx = (currentFlashcardIdx - 1 + cheatData.length) % cheatData.length;
+    updateFlashcardUI();
+    playSound('click');
+  };
+
+  // Калькулятор баллов
+  $('calcExamType').onchange = updateCalculatorUI;
+  $('calcSubject').onchange = updateCalculatorUI;
+  $('calcScoreRange').oninput = updateCalculatorUI;
+
+  // Звуки фокуса (Ambient)
+  document.querySelectorAll('.ambient-card').forEach(card => {
+    card.onclick = () => {
+      document.querySelectorAll('.ambient-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      currentAmbientMode = card.dataset.ambient;
+      if (ambientIsPlaying) {
+        startAmbientSound(currentAmbientMode);
+      }
+      playSound('click');
+    };
+  });
+
+  $('ambientMasterToggle').onclick = () => {
+    if (ambientIsPlaying) {
+      stopAmbientSound();
+      $('ambientMasterToggle').textContent = '▶ Включить аудио-фокус';
+      $('ambientCurrentLabel').textContent = 'Звук отключен';
+    } else {
+      startAmbientSound(currentAmbientMode);
+      $('ambientMasterToggle').textContent = '⏸ Выключить аудио';
+      const titles = { rain: 'Мягкий дождь', white: 'Белый шум', binaural: 'Альфа-волны 12 Гц', fire: 'Потрескивание камина' };
+      $('ambientCurrentLabel').textContent = `Играет: ${titles[currentAmbientMode]}`;
+    }
+  };
+
+  $('ambientVolume').oninput = e => {
+    if (ambientNodes && ambientNodes.masterGain) {
+      const vol = (+e.target.value / 100) * 0.25;
+      ambientNodes.masterGain.gain.setValueAtTime(vol, getAudioContext().currentTime);
+    }
+  };
+
+  // Помодоро
+  document.querySelectorAll('.pomo-tab-btn').forEach(btn => {
+    btn.onclick = () => {
+      document.querySelectorAll('.pomo-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      pausePomo();
+      pomoSeconds = +btn.dataset.pomo * 60;
+      updatePomoDisplay();
+      playSound('click');
+    };
+  });
+  $('pomoToggleBtn').onclick = () => {
+    if (pomoIsRunning) pausePomo();
+    else startPomo();
+    playSound('click');
+  };
+  $('pomoResetBtn').onclick = () => {
+    pausePomo();
+    const active = document.querySelector('.pomo-tab-btn.active');
+    pomoSeconds = (active ? +active.dataset.pomo : 25) * 60;
+    updatePomoDisplay();
+    playSound('click');
+  };
+
+  // Задачи
+  $('addTask').onclick = () => {
+    const title = $('taskTitle').value.trim();
+    if (!title) return toast('Укажите название задачи!');
+    db.tasks.push({
+      id: Date.now(),
+      title,
+      subject: $('taskSubject').value,
+      date: $('taskDate').value,
+      desc: $('taskDesc').value.trim(),
+      done: false
+    });
+    $('taskTitle').value = '';
+    $('taskDate').value = '';
+    $('taskDesc').value = '';
+    persist();
+    renderTasks();
+    toast('Новая задача сохранена');
+  };
+  $('taskFilter').onchange = renderTasks;
+  $('clearDone').onclick = () => {
+    db.tasks = db.tasks.filter(t => !t.done);
+    persist();
+    renderTasks();
+    toast('Выполненные задачи очищены');
+  };
+
+  // Резервное копирование
+  $('exportData').onclick = () => {
+    const blob = new Blob([JSON.stringify(db, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `StudyHub_Backup_${today()}.json`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+  $('importData').onclick = () => $('importFile').click();
+  $('importFile').onchange = e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const loaded = JSON.parse(reader.result);
+        db = { ...db, ...loaded };
+        persist();
+        renderHome();
+        renderTasks();
+        renderNotes();
+        toast('Данные успешно импортированы!');
+      } catch (_) {
+        toast('Ошибка чтения файла бекапа');
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  // Заметки
+  $('addNote').onclick = () => {
+    const title = $('noteTitle').value.trim();
+    const text = $('noteText').value.trim();
+    if (!title || !text) return toast('Заполните заголовок и текст!');
+    db.notes.unshift({
+      title,
+      text,
+      subject: $('noteSubject').value
+    });
+    $('noteTitle').value = '';
+    $('noteText').value = '';
+    persist();
+    renderNotes();
+    toast('Заметка добавлена');
+  };
+
+  // Темы и цвета
+  const savedAccent = localStorage.getItem('study_accent') || 'indigo';
+  const savedMode = localStorage.getItem('study_mode') || 'light';
+  $('accentSelect').value = savedAccent;
+  $('modeSelect').value = savedMode;
+  document.body.dataset.accent = savedAccent;
+  document.body.dataset.mode = savedMode;
+
+  $('accentSelect').onchange = e => {
+    document.body.dataset.accent = e.target.value;
+    localStorage.setItem('study_accent', e.target.value);
+  };
+  $('modeSelect').onchange = e => {
+    document.body.dataset.mode = e.target.value;
+    localStorage.setItem('study_mode', e.target.value);
+  };
+
+  renderHome();
+  loadDailyBlitz();
+  renderBank();
+  renderExamPage();
+  updatePomoDisplay();
+  updateCalculatorUI();
+}
+
+window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
